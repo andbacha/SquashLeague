@@ -9,9 +9,10 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainMenu">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainMenu">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -19,51 +20,49 @@
                   <menus>
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
-                              <MenuItem mnemonicParsing="false" text="Nowy sezon" />
-                        <MenuItem mnemonicParsing="false" text="Wczytaj sezon" />
-                        <MenuItem mnemonicParsing="false" text="Zapisz sezon" />
-                        <MenuItem mnemonicParsing="false" text="Eksportuj zawodników" />
-                        <MenuItem mnemonicParsing="false" text="Importuj zawodników" />
-                        <MenuItem mnemonicParsing="false" text="Zamknij" />
+                              <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
+                        <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" text="Wczytaj sezon" />
+                        <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
+                        <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
+                        <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />
+                        <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Zamknij" />
                           </items>
                       </Menu>
                   <Menu mnemonicParsing="false" text="Dodaj">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Dodaj turniej..." />
-                        <MenuItem mnemonicParsing="false" text="Dodaj zawodnika..." />
+                        <MenuItem fx:id="menuAddTournament" mnemonicParsing="false" text="Dodaj turniej..." />
+                        <MenuItem fx:id="menuAddPlayer" mnemonicParsing="false" text="Dodaj zawodnika..." />
                      </items>
                   </Menu>
                       <Menu mnemonicParsing="false" text="Edytuj">
                      <items>
-                        <MenuItem mnemonicParsing="false" text="Edytuj turniej..." />
-                        <MenuItem mnemonicParsing="false" text="Edytuj zawodnika..." />
-                        <MenuItem mnemonicParsing="false" text="Usuń turniej..." />
-                        <MenuItem mnemonicParsing="false" text="Usuń zawodnika..." />
+                        <MenuItem fx:id="menuModifyTournament" mnemonicParsing="false" text="Edytuj turniej..." />
+                        <MenuItem fx:id="menuModifyPlayer" mnemonicParsing="false" text="Edytuj zawodnika..." />
+                        <MenuItem fx:id="menuRemoveTournament" mnemonicParsing="false" text="Usuń turniej..." />
+                        <MenuItem fx:id="menuRemovePlayer" mnemonicParsing="false" text="Usuń zawodnika..." />
                      </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Pomoc">
                           <items>
-                              <MenuItem mnemonicParsing="false" text="O programie" />
+                              <MenuItem fx:id="menuAbout" mnemonicParsing="false" text="O programie" />
                           </items>
                       </Menu>
                   </menus>
               </MenuBar>
-            <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <ToolBar>
               <items>
-                <Button mnemonicParsing="false" text="Nowy sezon" />
-                  <Button layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Nowy turniej" />
-                  <Button layoutX="183.0" layoutY="13.0" mnemonicParsing="false" text="Usuń turniej" />
-                  <Button layoutX="95.0" layoutY="13.0" mnemonicParsing="false" text="Nowy zawodnik" />
-                  <Button layoutX="287.0" layoutY="13.0" mnemonicParsing="false" text="Usuń zawodnika" />
-                  <Button layoutX="372.0" layoutY="13.0" mnemonicParsing="false" text="Import zawodników" />
-                  <Button layoutX="479.0" layoutY="13.0" mnemonicParsing="false" text="Eksport zawodników" />
+                <Button fx:id="buttonNewSeason" mnemonicParsing="false" text="Nowy sezon" />
+                  <Button fx:id="buttonNewTournament" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" text="Nowy turniej" />
+                  <Button fx:id="buttonRemoveTournament" layoutX="183.0" layoutY="13.0" mnemonicParsing="false" text="Usuń turniej" />
+                  <Button fx:id="buttonImportPlayers" layoutX="372.0" layoutY="13.0" mnemonicParsing="false" text="Import zawodników" />
+                  <Button fx:id="buttonExportPlayers" layoutX="479.0" layoutY="13.0" mnemonicParsing="false" text="Eksport zawodników" />
               </items>
             </ToolBar>
          </children>
       </VBox>
    </top>
    <bottom>
-      <Label text="DziadoligaEditor v. 0.1 by andbacha" BorderPane.alignment="CENTER_LEFT">
+      <Label fx:id="labelBottom" text="DziadoligaEditor v. 0.1 by andbacha" BorderPane.alignment="CENTER_LEFT">
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </BorderPane.margin>
@@ -72,12 +71,14 @@
    <left>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <Hyperlink text="Mecze" />
-            <Hyperlink layoutX="10.0" layoutY="10.0" text="Tabela" />
-            <Hyperlink layoutX="10.0" layoutY="33.0" text="Zawodnicy" />
-            <Hyperlink layoutX="10.0" layoutY="56.0" text="Klasyfikacja sezonu" />
-            <Hyperlink layoutX="10.0" layoutY="33.0" text="Zasady" />
-            <Hyperlink layoutX="10.0" layoutY="56.0" text="Zakończ turniej" />
+            <Hyperlink fx:id="hyperlinkMatches" onAction="#setCenterContent" text="Mecze" />
+            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContent" text="Tabela" />
+            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zawodnicy" />
+            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContent" text="Klasyfikacja sezonu" />
+            <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zasady turnieju" />
+            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#setCenterContent" text="Zasady sezonu" />
+            <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#setCenterContent" text="Zakończ turniej" />
+            <Hyperlink fx:id="hyperlinkEndSeason" layoutX="10.0" layoutY="148.0" onAction="#setCenterContent" text="Zakończ sezon" />
          </children>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -85,6 +86,6 @@
       </VBox>
    </left>
    <center>
-        <fx:include source="ContentMatches.fxml" />
+      <Pane fx:id="paneCenterContent" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
