@@ -9,11 +9,9 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-
-<BorderPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainMenu">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainMenu">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -72,10 +70,12 @@
       </Label>
    </bottom>
    <left>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER">
          <children>
             <Hyperlink text="Mecze" />
             <Hyperlink layoutX="10.0" layoutY="10.0" text="Tabela" />
+            <Hyperlink layoutX="10.0" layoutY="33.0" text="Zawodnicy" />
+            <Hyperlink layoutX="10.0" layoutY="56.0" text="Klasyfikacja sezonu" />
             <Hyperlink layoutX="10.0" layoutY="33.0" text="Zasady" />
             <Hyperlink layoutX="10.0" layoutY="56.0" text="Zakończ turniej" />
          </children>
@@ -85,6 +85,6 @@
       </VBox>
    </left>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+        <fx:include source="ContentMatches.fxml" />
    </center>
 </BorderPane>
