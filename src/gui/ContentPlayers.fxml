@@ -5,7 +5,6 @@
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ContentPlayers">
    <children>
       <ToolBar prefHeight="40.0" prefWidth="200.0">
@@ -15,6 +14,6 @@
             <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Usuń" />
         </items>
       </ToolBar>
-      <ListView prefHeight="200.0" prefWidth="200.0" />
+      <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

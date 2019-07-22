@@ -8,7 +8,9 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Hyperlink;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 
 import java.util.HashMap;
 
@@ -96,14 +98,18 @@ public class MainMenu {
     private Hyperlink hyperlinkEndSeason;
 
     @FXML
-    private Pane paneCenterContent;
+    private AnchorPane anchorPaneCenterContent;
 
     public void setCenterContent(ActionEvent actionEvent) throws Exception {
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
         HashMap<String, String> hyperlinks = Hyperlinks.getHyperlinks();
         Pane loadedPane = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
-        paneCenterContent.getChildren().clear();
-        paneCenterContent.getChildren().add(loadedPane);
+        anchorPaneCenterContent.getChildren().clear();
+        anchorPaneCenterContent.getChildren().add(loadedPane);
+        AnchorPane.setTopAnchor(loadedPane, 0.0);
+        AnchorPane.setBottomAnchor(loadedPane, 0.0);
+        AnchorPane.setLeftAnchor(loadedPane, 0.0);
+        AnchorPane.setRightAnchor(loadedPane, 0.0);
     }
 
 }
