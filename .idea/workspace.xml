@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Maven migration prepared" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Executable created using Launch4j">
+      <change afterPath="$PROJECT_DIR$/target/DziadoligaEditor-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/DziadoligaEditor.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentMatches.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentMatches.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentPlayers.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentPlayers.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentSeasonRules.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentSeasonRules.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentSeasonTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentSeasonTable.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentRules.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentRules.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentTable.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentTable.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/Hyperlinks.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/Launcher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/SplashScreen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/gui/SplashScreen.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/original-DziadoligaEditor-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -64,8 +92,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+            <state relative-caret-position="678">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
             </state>
           </provider>
         </entry>
@@ -409,7 +437,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563895802698</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Executable created using Launch4j">
+      <created>1563897139050</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1563897139050</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Executable created using Launch4j">
+      <created>1563897152898</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1563897152898</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -426,7 +468,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17011128" />
       <window_info id="Structure" order="1" weight="0.25" />
@@ -437,7 +478,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3257989" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3257989" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3998441" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -506,7 +547,8 @@
     <MESSAGE value="Tournament table UI content" />
     <MESSAGE value="Clean-up before Maven migration" />
     <MESSAGE value="Maven migration prepared" />
-    <option name="LAST_COMMIT_MESSAGE" value="Maven migration prepared" />
+    <MESSAGE value="Executable created using Launch4j" />
+    <option name="LAST_COMMIT_MESSAGE" value="Executable created using Launch4j" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -578,8 +620,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+        <state relative-caret-position="678">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
         </state>
       </provider>
     </entry>
