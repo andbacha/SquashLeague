@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>D:\Programming\Repos\Java\DziadoligaEditor\target\DziadoligaEditor-1.0-SNAPSHOT.jar</jar>
+  <outfile>D:\Programming\Repos\Java\DziadoligaEditor\target\DziadoligaEditor.exe</outfile>
+  <errTitle>Please install JRE first.</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon></icon>
+  <singleInstance>
+    <mutexName>DziadoligaEditor</mutexName>
+    <windowTitle>DziadoligaEditor</windowTitle>
+  </singleInstance>
+  <jre>
+    <path></path>
+    <bundledJre64Bit>false</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64/32</runtimeBits>
+  </jre>
+  <versionInfo>
+    <fileVersion>0.0.0.1</fileVersion>
+    <txtFileVersion>0.0.0.1</txtFileVersion>
+    <fileDescription>DziadoligaEditor</fileDescription>
+    <copyright>andbacha</copyright>
+    <productVersion>0.0.0.1</productVersion>
+    <txtProductVersion>0.0.0.1</txtProductVersion>
+    <productName>DziadoligaEditor</productName>
+    <companyName></companyName>
+    <internalName>DziadoligaEditor</internalName>
+    <originalFilename>DziadoligaEditor.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>POLISH</language>
+  </versionInfo>
+</launch4jConfig>

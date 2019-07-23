@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentTournamentRules">
+   <children>
+      <Accordion VBox.vgrow="ALWAYS">
+        <panes>
+          <TitledPane animated="false" text="Kolejność miejsc">
+            <content>
+                  <VBox spacing="5.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="Bilans setów">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleGroupPointRules" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton mnemonicParsing="false" text="Dodatkowy mecz" toggleGroup="$toggleGroupPointRules" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Grupy">
+            <content>
+                  <VBox spacing="5.0">
+                     <children>
+                        <RadioButton mnemonicParsing="false" text="Grupa mistrzowska / spadkowa">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="toggleGroupGroups" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton layoutX="21.0" layoutY="21.0" mnemonicParsing="false" text="Pojedyncza grupa" toggleGroup="$toggleGroupGroups" />
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Punktacja za miejsca">
+               <content>
+                  <TableView>
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="Miejsce" />
+                      <TableColumn prefWidth="75.0" text="Punkty" />
+                    </columns>
+                  </TableView>
+               </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</VBox>
