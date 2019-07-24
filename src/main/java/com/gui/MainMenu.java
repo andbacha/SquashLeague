@@ -125,10 +125,11 @@ public class MainMenu {
         window.setScene(new Scene(root));
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle(title);
+        window.setResizable(false);
         window.show();
     }
 
-    // display warning dialog window
+    // displays warning dialog window
     public void displayWarningDialog(ActionEvent actionEvent) throws Exception {
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
         Stage window = new Stage();
@@ -136,10 +137,11 @@ public class MainMenu {
         window.setScene(new Scene(root));
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Potwierdź");
+        window.setResizable(false);
         window.show();
     }
 
-    // set if all hyperlinks on the left are enabled (true) or disabled (false)
+    // set all hyperlinks on the left enabled (true) or disabled (false)
     public void setGlobalHyperlinksEnabled(boolean state) {
         hyperlinkMatches.setDisable(!state);
         hyperlinkTournamentTable.setDisable(!state);

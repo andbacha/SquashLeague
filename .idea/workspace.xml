@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Few extensions / modifications">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/Season.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/app/Tournament.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gui/WarningDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/gui/WarningDialog.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/Hyperlinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/FXMLMapping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gui/ContentSeasonRules.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gui/ContentSeasonRules.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gui/Hyperlinks.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gui/MainMenu.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,23 +69,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
-              <folding>
-                <element signature="e#3908#3909#0" expanded="true" />
-                <element signature="e#3952#3953#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="127" column="33" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -103,41 +80,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+            <state relative-caret-position="221">
+              <caret line="13" column="134" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Season.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+            <state relative-caret-position="102">
+              <caret line="33" column="85" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Tournament.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#676#677#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -153,32 +111,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/Main.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentPlayers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="34">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatches.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="53" column="101" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
             </state>
           </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/FXMLMapping.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -199,6 +163,8 @@
       <find>hyperlinkEndTournament</find>
       <find>anchor</find>
       <find>javafx11-</find>
+      <find>fxml</find>
+      <find>listview</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -244,13 +210,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gui/WarningDialog.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/gui/WarningDialog.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gui/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/Tournament.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/Season.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gui/FXMLMapping.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java" />
       </list>
     </option>
   </component>
@@ -284,15 +250,11 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1612" />
-    <option name="height" value="876" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1167" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
-  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -384,7 +346,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/com/gui" />
-    <property name="last_opened_file_path" value="D:/../SDK/JavaFX11/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JavaFXProject" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -575,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563897152898</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Few extensions / modifications">
+      <created>1563960859496</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1563960859496</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -594,7 +563,7 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.17217484" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" weight="0.35667396" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -623,7 +592,7 @@
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Maven" order="7" visible="true" weight="0.32995737" />
+      <window_info anchor="right" id="Maven" order="7" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="8" />
       <window_info anchor="right" id="Palette&#9;" order="9" />
       <window_info anchor="right" id="Theme Preview" order="10" />
@@ -665,7 +634,6 @@
     </layout-to-restore>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <MESSAGE value="UI created" />
     <MESSAGE value="Matches UI content" />
@@ -683,12 +651,10 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/SplashScreen.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentPlayers.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentRules.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentSeasonTable.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/SplashScreen.java" />
     <entry file="jar://D:/../SDK/JavaFX11/lib/javafx.graphics.jar!/javafx/scene/Node.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatches.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/ContentTournamentRules.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/ContentSeasonTable.fxml" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/ContentSeasonRules.fxml" />
@@ -715,67 +681,12 @@
     <entry file="file://$PROJECT_DIR$/dependency-reduced-pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/MainMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1632">
-          <caret line="106" column="8" selection-start-line="106" selection-start-column="8" selection-end-line="109" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/ContentMatches.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentTournamentTable.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentMatches.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="151" selection-start-line="10" selection-start-column="151" selection-end-line="10" selection-end-column="151" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentPlayers.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar!/javafx/fxml/FXMLLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="900" selection-start-line="900" selection-end-line="900" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/MainMenu.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/app/ContentMatches.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentTournamentTable.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentMatches.fxml" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com.gui.app/ContentPlayers.fxml" />
     <entry file="jar://D:/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -829,13 +740,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Season.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Tournament.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="170">
           <caret line="14" column="47" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/FXMLMapping.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="127" column="33" selection-start-line="127" selection-start-column="33" selection-end-line="127" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -846,63 +791,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Tournament.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Season.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/FXMLMapping.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentPlayers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatches.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="53" column="101" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
         </state>
       </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/MainMenu.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/DialogNewSeason.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="49" lean-forward="true" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        <state relative-caret-position="221">
+          <caret line="13" column="134" selection-start-line="13" selection-start-column="134" selection-end-line="13" selection-end-column="134" />
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenu.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11-win.jar!/javafx/collections/ModifiableObservableListBase.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="153" column="38" selection-start-line="153" selection-start-column="38" selection-end-line="153" selection-end-column="38" />
+        <state relative-caret-position="199">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar!/javafx/fxml/FXMLLoader.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="1217" selection-start-line="1217" selection-end-line="1217" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/DialogNewSeason.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="33" column="85" selection-start-line="33" selection-start-column="85" selection-end-line="33" selection-end-column="85" />
           <folding>
-            <element signature="e#3908#3909#0" expanded="true" />
-            <element signature="e#3952#3953#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#584#585#0" expanded="true" />
+            <element signature="e#676#677#0" expanded="true" />
           </folding>
         </state>
       </provider>
