@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeason">
+<VBox fx:id="dialogNewSeason" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeason">
    <children>
       <HBox>
          <children>
@@ -54,7 +54,7 @@
             <Insets />
          </VBox.margin>
          <children>
-            <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateTournament" text="Utwórz turniej" />
+            <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateSeason" text="Utwórz turniej" />
          </children>
       </HBox>
    </children>

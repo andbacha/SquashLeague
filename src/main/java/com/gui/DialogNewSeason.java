@@ -1,17 +1,31 @@
 package com.gui;
 
 import com.app.Player;
+import com.app.Season;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Window;
 
 import javax.tools.Tool;
+import java.time.LocalDate;
+import java.util.HashMap;
 
 public class DialogNewSeason {
+
+    // PRIVATE FIELDS
+
+    // currently loaded season - non-empty properties filled after loading / creation of new season
+    private Season currentSeason = new Season();
+
+    // GUI COMPONENTS
+
+    @FXML
+    private VBox dialogNewSeason;
 
     @FXML
     private Button buttonImportPlayers;
@@ -57,12 +71,29 @@ public class DialogNewSeason {
     }
 
     @FXML
-    void handleButtonCreateTournament(ActionEvent event) {
+    void handleButtonCreateSeason(ActionEvent event) {
         ObservableList<String> players = listViewPlayers.getItems();
-        if (textFieldTargetPoints.getText().equals("")) {
-            textFieldTargetPoints.setPromptText("Wpisz docelową liczbę punktów!");
-        } else {
-            System.out.println("Utworzono nowy sezon");
+        try {
+            int targetPoints = Integer.parseInt(textFieldTargetPoints.getText());
+            if (textFieldTargetPoints.getText().equals("")) {
+                textFieldTargetPoints.setPromptText("Wpisz docelową liczbę punktów!");
+            } else {
+                // HashMap - players dictionary
+                HashMap<String, Player> playerHashMap = new HashMap<>();
+                for (String playerName : players) {
+                    playerHashMap.put(playerName, new Player(playerName));
+                }
+
+                // create new season object (currentSeason)
+                currentSeason.setPlayers(playerHashMap);
+                currentSeason = new Season(LocalDate.now(), playerHashMap);
+                dialogNewSeason.setVisible(false);
+            }
+        } catch (NumberFormatException e) {
+            textFieldTargetPoints.clear();
+            textFieldTargetPoints.setPromptText("Wpisz poprawną liczbę punktów!");
+        } catch (Exception e) {
+            System.out.println("Inny błąd");
         }
     }
 

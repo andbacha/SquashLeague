@@ -1,5 +1,6 @@
 package com.gui;
 
+import com.app.Season;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -105,6 +106,8 @@ public class MainMenu {
     // hyperlinks HashMap for hyperlink <> fxml mapping
     HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
 
+    // PUBLIC METHODS
+
     // set central content of MainMenu window
     public void setCenterContent(ActionEvent actionEvent) throws Exception {
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
@@ -156,6 +159,7 @@ public class MainMenu {
     // handler for "New Season" action
     public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
         openDialog("Nowy sezon", "DialogNewSeason.fxml");
+
     }
 
     // handler for "New Tournament" action
