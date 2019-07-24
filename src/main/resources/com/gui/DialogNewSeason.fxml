@@ -26,7 +26,7 @@
       </HBox>
       <HBox spacing="10.0">
          <children>
-            <TextField fx:id="textFieldPlayerName" prefWidth="250.0" promptText="Imię / pseudonim" />
+            <TextField fx:id="textFieldPlayerName" prefWidth="250.0" promptText="Imię / pseudonim" HBox.hgrow="ALWAYS" />
           <Button fx:id="buttonAddPlayer" mnemonicParsing="false" onAction="#handleButtonAddPlayer" text="Dodaj" />
             <Button fx:id="buttonRemovePlayer" mnemonicParsing="false" onAction="#handleButtonRemovePlayer" text="Usuń" />
          </children>
@@ -40,7 +40,14 @@
          </content>
       </TitledPane>
      <TitledPane animated="false" layoutX="10.0" layoutY="45.0" text="Zasady">
-       <fx:include source="ContentSeasonRules.fxml" />
+         <content>
+            <HBox spacing="10.0">
+               <children>
+                  <Label prefHeight="25.0" text="Docelowa liczba punktów" HBox.hgrow="ALWAYS" />
+                  <TextField fx:id="textFieldTargetPoints" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </content>
      </TitledPane>
       <HBox alignment="TOP_RIGHT">
          <VBox.margin>

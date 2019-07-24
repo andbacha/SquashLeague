@@ -21,11 +21,11 @@
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
                               <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
-                        <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" text="Wczytaj sezon" />
-                        <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
-                        <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
-                        <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />
-                        <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Zamknij" />
+                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" text="Wczytaj sezon" />
+                              <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
+                              <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
+                              <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />
+                              <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Zamknij" />
                           </items>
                       </Menu>
                   <Menu mnemonicParsing="false" text="Dodaj">
