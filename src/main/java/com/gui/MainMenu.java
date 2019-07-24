@@ -1,9 +1,9 @@
 package com.gui;
 
-import com.app.Season;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
@@ -15,9 +15,13 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
-public class MainMenu {
+public class MainMenu implements Initializable {
+
+    private Stage modalDialog;
 
     @FXML
     private MenuItem menuNewSeason;
@@ -106,10 +110,19 @@ public class MainMenu {
     // hyperlinks HashMap for hyperlink <> fxml mapping
     HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        setGlobalHyperlinksEnabled(false);
+        setMenuItemsStateWhenSeasonClosed();
+
+    }
+
     // PUBLIC METHODS
 
     // set central content of MainMenu window
     public void setCenterContent(ActionEvent actionEvent) throws Exception {
+
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
 //        HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
         Pane loadedPane = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
@@ -119,21 +132,25 @@ public class MainMenu {
         AnchorPane.setBottomAnchor(loadedPane, 0.0);
         AnchorPane.setLeftAnchor(loadedPane, 0.0);
         AnchorPane.setRightAnchor(loadedPane, 0.0);
+
     }
 
     // opens new dialog with given title and fxml file layout
-    public void openDialog(String title, String fxmlFile) throws Exception {
-        Stage window = new Stage();
+    public void openModalDialog(String title, String fxmlFile) throws Exception {
+
+        modalDialog = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        window.setScene(new Scene(root));
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle(title);
-        window.setResizable(false);
-        window.show();
+        modalDialog.setScene(new Scene(root));
+        modalDialog.initModality(Modality.APPLICATION_MODAL);
+        modalDialog.setTitle(title);
+        modalDialog.setResizable(false);
+        modalDialog.show();
+
     }
 
     // displays warning dialog window
     public void displayWarningDialog(ActionEvent actionEvent) throws Exception {
+
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
         Stage window = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
@@ -142,10 +159,12 @@ public class MainMenu {
         window.setTitle("Potwierdź");
         window.setResizable(false);
         window.show();
+
     }
 
     // set all hyperlinks on the left enabled (true) or disabled (false)
     public void setGlobalHyperlinksEnabled(boolean state) {
+
         hyperlinkMatches.setDisable(!state);
         hyperlinkTournamentTable.setDisable(!state);
         hyperlinkPlayers.setDisable(!state);
@@ -154,16 +173,56 @@ public class MainMenu {
         hyperlinkSeasonRules.setDisable(!state);
         hyperlinkEndTournament.setDisable(!state);
         hyperlinkEndSeason.setDisable(!state);
+
+    }
+
+    // sets menu items' state whether any season is opened or not
+    public void setMenuItemsStateDependingOnSeason(boolean state) {
+
+        // menu Plik
+        menuSaveSeason.setDisable(state);
+        menuExportPlayers.setDisable(state);
+        menuImportPlayers.setDisable(state);
+
+        // menu Dodaj
+        menuAddTournament.setDisable(state);
+        menuAddPlayer.setDisable(state);
+
+        // menu Edytuj
+        menuModifyTournament.setDisable(state);
+        menuModifyPlayer.setDisable(state);
+        menuRemoveTournament.setDisable(state);
+        menuRemovePlayer.setDisable(state);
+
+        // toolbar
+        buttonNewTournament.setDisable(state);
+        buttonRemoveTournament.setDisable(state);
+        buttonImportPlayers.setDisable(state);
+        buttonExportPlayers.setDisable(state);
+
+    }
+
+    public void setMenuItemsStateWhenSeasonClosed() {
+        setMenuItemsStateDependingOnSeason(true);
+    }
+
+    public void setMenuItemsStateWhenSeasonOpened() {
+        setMenuItemsStateDependingOnSeason(false);
     }
 
     // handler for "New Season" action
     public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
-        openDialog("Nowy sezon", "DialogNewSeason.fxml");
+
+        openModalDialog("Nowy sezon", "DialogNewSeason.fxml");
+        setMenuItemsStateWhenSeasonOpened();
 
     }
 
     // handler for "New Tournament" action
-    public void handleActionNewTournament(ActionEvent actionEvent) {
+    public void handleActionNewTournament(ActionEvent actionEvent) throws Exception {
+
+        openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
         setGlobalHyperlinksEnabled(true);
+
     }
 }

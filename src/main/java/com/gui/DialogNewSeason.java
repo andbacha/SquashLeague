@@ -6,16 +6,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.stage.Window;
 
 import javax.tools.Tool;
+import java.net.URL;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 
-public class DialogNewSeason {
+public class DialogNewSeason implements Initializable {
 
     // PRIVATE FIELDS
 
@@ -48,9 +53,8 @@ public class DialogNewSeason {
     @FXML
     private Button buttonCreateTournament;
 
-    @FXML
-
-    public void initialize() {
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
         listViewPlayers.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         if (listViewPlayers.getItems().equals(FXCollections.emptyObservableList())) {
             buttonCreateTournament.setDisable(true);
@@ -85,15 +89,19 @@ public class DialogNewSeason {
                 }
 
                 // create new season object (currentSeason)
+
                 currentSeason.setPlayers(playerHashMap);
                 currentSeason = new Season(LocalDate.now(), playerHashMap);
-                dialogNewSeason.setVisible(false);
+
+                // close window
+
+                Node source = (Node) event.getSource();
+                Stage stage = (Stage) source.getScene().getWindow();
+                stage.close();
             }
         } catch (NumberFormatException e) {
             textFieldTargetPoints.clear();
             textFieldTargetPoints.setPromptText("Wpisz poprawną liczbę punktów!");
-        } catch (Exception e) {
-            System.out.println("Inny błąd");
         }
     }
 

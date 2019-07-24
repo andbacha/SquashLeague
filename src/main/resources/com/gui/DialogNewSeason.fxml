@@ -13,9 +13,14 @@
 
 <VBox fx:id="dialogNewSeason" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeason">
    <children>
+      <Label text="Nowy sezon">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
       <HBox>
          <children>
-            <Label text="Dodaj zawodnika">
+            <Label text="Dodaj zawodników">
                <font>
                   <Font size="18.0" />
                </font>
@@ -54,7 +59,7 @@
             <Insets />
          </VBox.margin>
          <children>
-            <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateSeason" text="Utwórz turniej" />
+            <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateSeason" text="Utwórz sezon" />
          </children>
       </HBox>
    </children>
