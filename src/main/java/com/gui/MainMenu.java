@@ -3,12 +3,16 @@ package com.gui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
 import java.util.HashMap;
 
@@ -98,9 +102,13 @@ public class MainMenu {
     @FXML
     private AnchorPane anchorPaneCenterContent;
 
+    // hyperlinks HashMap for hyperlink <> fxml mapping
+    HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
+
+    // set central content of MainMenu window
     public void setCenterContent(ActionEvent actionEvent) throws Exception {
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
-        HashMap<String, String> hyperlinks = Hyperlinks.getHyperlinks();
+//        HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
         Pane loadedPane = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
         anchorPaneCenterContent.getChildren().clear();
         anchorPaneCenterContent.getChildren().add(loadedPane);
@@ -110,4 +118,46 @@ public class MainMenu {
         AnchorPane.setRightAnchor(loadedPane, 0.0);
     }
 
+    // opens new dialog with given title and fxml file layout
+    public void openDialog(String title, String fxmlFile) throws Exception {
+        Stage window = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+        window.setScene(new Scene(root));
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle(title);
+        window.show();
+    }
+
+    // display warning dialog window
+    public void displayWarningDialog(ActionEvent actionEvent) throws Exception {
+        Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
+        Stage window = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
+        window.setScene(new Scene(root));
+        window.initModality(Modality.APPLICATION_MODAL);
+        window.setTitle("Potwierdź");
+        window.show();
+    }
+
+    // set if all hyperlinks on the left are enabled (true) or disabled (false)
+    public void setGlobalHyperlinksEnabled(boolean state) {
+        hyperlinkMatches.setDisable(!state);
+        hyperlinkTournamentTable.setDisable(!state);
+        hyperlinkPlayers.setDisable(!state);
+        hyperlinkSeasonTable.setDisable(!state);
+        hyperlinkTournamentRules.setDisable(!state);
+        hyperlinkSeasonRules.setDisable(!state);
+        hyperlinkEndTournament.setDisable(!state);
+        hyperlinkEndSeason.setDisable(!state);
+    }
+
+    // handler for "New Season" action
+    public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
+        openDialog("Nowy sezon", "DialogNewSeason.fxml");
+    }
+
+    // handler for "New Tournament" action
+    public void handleActionNewTournament(ActionEvent actionEvent) {
+        setGlobalHyperlinksEnabled(true);
+    }
 }
