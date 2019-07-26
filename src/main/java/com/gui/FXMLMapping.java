@@ -15,8 +15,6 @@ public abstract class FXMLMapping {
         hyperlinks.put("hyperlinkSeasonTable", "ContentSeasonTable.fxml");
         hyperlinks.put("hyperlinkTournamentRules", "ContentTournamentRules.fxml");
         hyperlinks.put("hyperlinkSeasonRules", "ContentSeasonRules.fxml");
-        hyperlinks.put("hyperlinkEndTournament", "WarningDialogController.fxml");
-        hyperlinks.put("hyperlinkEndSeason", "WarningDialogController.fxml");
         return hyperlinks;
     }
 
