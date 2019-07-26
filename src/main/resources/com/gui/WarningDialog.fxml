@@ -6,17 +6,17 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefWidth="230.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.WarningDialog">
+<VBox alignment="CENTER" prefWidth="230.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.WarningDialogController">
    <children>
-      <Label text="Czy na pewno?">
+      <Label fx:id="labelWarningDialogMessage" text="Czy na pewno?">
          <VBox.margin>
             <Insets />
          </VBox.margin>
       </Label>
       <HBox alignment="CENTER" spacing="10.0">
          <children>
-            <Button mnemonicParsing="false" text="Tak" />
-            <Button mnemonicParsing="false" text="Nie" />
+            <Button fx:id="buttonYes" mnemonicParsing="false" onAction="#handleButtonYes" text="Tak" />
+            <Button fx:id="buttonNo" mnemonicParsing="false" onAction="#handleButtonNo" text="Nie" />
          </children>
       </HBox>
    </children>
