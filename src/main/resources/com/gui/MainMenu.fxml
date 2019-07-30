@@ -71,12 +71,12 @@
    <left>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <Hyperlink fx:id="hyperlinkMatches" onAction="#setCenterContent" text="Mecze" />
-            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContent" text="Tabela" />
-            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zawodnicy" />
-            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContent" text="Klasyfikacja sezonu" />
-            <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zasady turnieju" />
-            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#setCenterContent" text="Zasady sezonu" />
+            <Hyperlink fx:id="hyperlinkMatches" onAction="#hyperlinkClick" text="Mecze" />
+            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#hyperlinkClick" text="Tabela" />
+            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zawodnicy" />
+            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#hyperlinkClick" text="Klasyfikacja sezonu" />
+            <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zasady turnieju" />
+            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#hyperlinkClick" text="Zasady sezonu" />
             <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#displayWarningDialog" text="Zakończ turniej" />
             <Hyperlink fx:id="hyperlinkEndSeason" layoutX="10.0" layoutY="148.0" onAction="#displayWarningDialog" text="Zakończ sezon" />
          </children>

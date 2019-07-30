@@ -15,6 +15,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
@@ -124,26 +125,34 @@ public class MainMenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        setMenuItemsStateWhenSeasonClosed();
-        disableHyperlinks();
+        disableMenuItemsWhenSeasonNotOpened();
+        setHyperlinkStates(false);
     }
 
     // PUBLIC METHODS
 
     /**
-     * Set central content of MainMenuController window. Action is triggered by all of the Hyperlink items placed on the left side of UI.
+     * Set central content of main menu window.
+     * @param fxmlFile path to FXML file of layout
+     */
+    public void setCenterContent(String fxmlFile) throws IOException {
+        Pane centerContent = FXMLLoader.load(getClass().getResource(fxmlFile));
+        anchorPaneCenterContent.getChildren().clear();
+        anchorPaneCenterContent.getChildren().add(centerContent);
+        AnchorPane.setTopAnchor(centerContent, 0.0);
+        AnchorPane.setBottomAnchor(centerContent, 0.0);
+        AnchorPane.setLeftAnchor(centerContent, 0.0);
+        AnchorPane.setRightAnchor(centerContent, 0.0);
+    }
+
+    /**
+     * Set central content of main menu - action is triggered by all of the Hyperlink items placed on the left side of UI.
      * @param actionEvent
      * @throws Exception
      */
-    public void setCenterContent(ActionEvent actionEvent) throws Exception {
+    public void hyperlinkClick(ActionEvent actionEvent) throws Exception {
         Hyperlink hyperlink = (Hyperlink) actionEvent.getSource();
-        Pane loadedPane = FXMLLoader.load(getClass().getResource(hyperlinks.get(hyperlink.getId())));
-        anchorPaneCenterContent.getChildren().clear();
-        anchorPaneCenterContent.getChildren().add(loadedPane);
-        AnchorPane.setTopAnchor(loadedPane, 0.0);
-        AnchorPane.setBottomAnchor(loadedPane, 0.0);
-        AnchorPane.setLeftAnchor(loadedPane, 0.0);
-        AnchorPane.setRightAnchor(loadedPane, 0.0);
+        setCenterContent(hyperlinks.get(hyperlink.getId()));
     }
 
     /**
@@ -188,10 +197,10 @@ public class MainMenuController implements Initializable {
     }
 
     /**
-     * Sets menu items' and toolbar buttons' states depending on season state (opened or not).
+     * Enables or disables all menu items
      * @param state state of items - disabled if true
      */
-    public void setMenuItemsStateDependingOnSeason(boolean state) {
+    public void disableEnableMenuItems(boolean state) {
         // menu "Plik"
         menuSaveSeason.setDisable(state);
         menuExportPlayers.setDisable(state);
@@ -215,45 +224,67 @@ public class MainMenuController implements Initializable {
     }
 
     /**
+     * Sets menu items' and toolbar buttons' states depending on season state (opened or not).
+     * @param state state of items - disabled if true
+     */
+    public void setMenuItemStatesDependingOnSeason(boolean state) {
+        // menu "Plik"
+        menuSaveSeason.setDisable(state);
+        menuExportPlayers.setDisable(state);
+        menuImportPlayers.setDisable(state);
+
+        // menu "Dodaj"
+        menuAddTournament.setDisable(state);
+        menuAddPlayer.setDisable(state);
+
+        // menu "Edytuj"
+        menuModifyPlayer.setDisable(state);
+        menuRemovePlayer.setDisable(state);
+
+        // toolbar buttons
+        buttonNewTournament.setDisable(state);
+        buttonImportPlayers.setDisable(state);
+        buttonExportPlayers.setDisable(state);
+    }
+
+    /**
      * Disables several buttons in situation when season is not opened.
      */
-    public void setMenuItemsStateWhenSeasonClosed() {
-        setMenuItemsStateDependingOnSeason(true);
+    public void disableMenuItemsWhenSeasonNotOpened() {
+        setMenuItemStatesDependingOnSeason(true);
     }
 
     /**
      * Enables several buttons in situation when season is opened.
      */
-    public void setMenuItemsStateWhenSeasonOpened() {
-        setMenuItemsStateDependingOnSeason(false);
+    public void enableMenuItemsWhenSeasonOpened() {
+        setMenuItemStatesDependingOnSeason(false);
     }
 
     /**
-     * Enables all of the hyperlinks placed on the left side of UI.
+     * Sets state of all hyperlinks on the left side of main menu
+     * @param state true (enabled), false (disabled)
      */
-    public void enableHyperlinks() {
-        hyperlinkMatches.setDisable(false);
-        hyperlinkTournamentTable.setDisable(false);
-        hyperlinkPlayers.setDisable(false);
-        hyperlinkSeasonTable.setDisable(false);
-        hyperlinkTournamentRules.setDisable(false);
-        hyperlinkSeasonRules.setDisable(false);
-        hyperlinkEndTournament.setDisable(false);
-        hyperlinkEndSeason.setDisable(false);
+    public void setHyperlinkStates(boolean state) {
+        hyperlinkMatches.setDisable(!state);
+        hyperlinkTournamentTable.setDisable(!state);
+        hyperlinkPlayers.setDisable(!state);
+        hyperlinkSeasonTable.setDisable(!state);
+        hyperlinkTournamentRules.setDisable(!state);
+        hyperlinkSeasonRules.setDisable(!state);
+        hyperlinkEndTournament.setDisable(!state);
+        hyperlinkEndSeason.setDisable(!state);
     }
 
     /**
-     * Disables all of the hyperlinks placed on the left side of UI.
+     * Sets proper state of hyperlinks on the left side of main menu when season is opened or not
+     * @param state true (season opened), false (season closed)
      */
-    public void disableHyperlinks() {
-        hyperlinkMatches.setDisable(true);
-        hyperlinkTournamentTable.setDisable(true);
-        hyperlinkPlayers.setDisable(true);
-        hyperlinkSeasonTable.setDisable(true);
-        hyperlinkTournamentRules.setDisable(true);
-        hyperlinkSeasonRules.setDisable(true);
-        hyperlinkEndTournament.setDisable(true);
-        hyperlinkEndSeason.setDisable(true);
+    public void setHyperlinkStatesWhenSeasonOpened(boolean state) {
+        hyperlinkPlayers.setDisable(!state);
+        hyperlinkSeasonTable.setDisable(!state);
+        hyperlinkSeasonRules.setDisable(!state);
+        hyperlinkEndSeason.setDisable(!state);
     }
 
     /**
@@ -264,7 +295,9 @@ public class MainMenuController implements Initializable {
     public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
         openModalDialog("Nowy sezon", "DialogNewSeason.fxml");
         if (isSeasonCreated) {
-            enableHyperlinks();
+            setHyperlinkStatesWhenSeasonOpened(true);
+            enableMenuItemsWhenSeasonOpened();
+            setCenterContent("ContentMatches.fxml");
         }
     }
 
@@ -274,7 +307,9 @@ public class MainMenuController implements Initializable {
      * @throws Exception
      */
     public void handleActionNewTournament(ActionEvent actionEvent) throws Exception {
-        openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
+//        openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
+        setHyperlinkStates(true);
+        disableEnableMenuItems(false);
     }
 
 }

@@ -147,18 +147,20 @@ public class DialogNewSeasonController implements Initializable {
                     // create new season object (currentSeason)
                     currentSeason.setPlayers(playerHashMap);
                     currentSeason = new Season(LocalDate.now(), playerHashMap);
+
                     // handle 'yes'
                     parentController.setSeasonCreated(true);
+
+                    // close window
+                    Node source = (Node) event.getSource();
+                    Stage stage = (Stage) source.getScene().getWindow();
+                    stage.close();
                 } else {
                     // handle 'no'
                     parentController.setSeasonCreated(false);
                 }
 
-                // close window
 
-                Node source = (Node) event.getSource();
-                Stage stage = (Stage) source.getScene().getWindow();
-                stage.close();
             }
         } catch (NumberFormatException e) {
             textFieldTargetPoints.clear();
