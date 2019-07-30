@@ -21,6 +21,8 @@ import java.util.ResourceBundle;
 
 public class MainMenuController implements Initializable {
 
+    boolean isSeasonCreated;
+
     // GUI COMPONENTS
 
     @FXML
@@ -112,6 +114,14 @@ public class MainMenuController implements Initializable {
      */
     HashMap<String, String> hyperlinks = FXMLMapping.getHyperlinks();
 
+    public boolean isSeasonCreated() {
+        return isSeasonCreated;
+    }
+
+    public void setSeasonCreated(boolean seasonCreated) {
+        isSeasonCreated = seasonCreated;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setMenuItemsStateWhenSeasonClosed();
@@ -143,13 +153,23 @@ public class MainMenuController implements Initializable {
      * @throws Exception
      */
     public void openModalDialog(String title, String fxmlFile) throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Parent root = loader.load();
+
+        Scene modalDialogScene = new Scene(root);
+
+        // Provide MainMenuController object to child controller
+        DialogNewSeasonController childController = loader.getController();
+        childController.setParentController(this);
+
+        // Set and display stage
         Stage modalDialog = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
-        modalDialog.setScene(new Scene(root));
+        modalDialog.setScene(modalDialogScene);
         modalDialog.initModality(Modality.APPLICATION_MODAL);
         modalDialog.setTitle(title);
         modalDialog.setResizable(false);
-        modalDialog.show();
+        modalDialog.showAndWait();
     }
 
     /**
@@ -164,7 +184,7 @@ public class MainMenuController implements Initializable {
         window.initModality(Modality.APPLICATION_MODAL);
         window.setTitle("Potwierdź");
         window.setResizable(false);
-        window.show();
+        window.showAndWait();
     }
 
     /**
@@ -209,6 +229,20 @@ public class MainMenuController implements Initializable {
     }
 
     /**
+     * Enables all of the hyperlinks placed on the left side of UI.
+     */
+    public void enableHyperlinks() {
+        hyperlinkMatches.setDisable(false);
+        hyperlinkTournamentTable.setDisable(false);
+        hyperlinkPlayers.setDisable(false);
+        hyperlinkSeasonTable.setDisable(false);
+        hyperlinkTournamentRules.setDisable(false);
+        hyperlinkSeasonRules.setDisable(false);
+        hyperlinkEndTournament.setDisable(false);
+        hyperlinkEndSeason.setDisable(false);
+    }
+
+    /**
      * Disables all of the hyperlinks placed on the left side of UI.
      */
     public void disableHyperlinks() {
@@ -229,6 +263,9 @@ public class MainMenuController implements Initializable {
      */
     public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
         openModalDialog("Nowy sezon", "DialogNewSeason.fxml");
+        if (isSeasonCreated) {
+            enableHyperlinks();
+        }
     }
 
     /**
@@ -239,4 +276,5 @@ public class MainMenuController implements Initializable {
     public void handleActionNewTournament(ActionEvent actionEvent) throws Exception {
         openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
     }
+
 }

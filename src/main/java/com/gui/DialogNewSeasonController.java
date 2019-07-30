@@ -31,14 +31,21 @@ public class DialogNewSeasonController implements Initializable {
     // currently loaded season - non-empty properties filled after loading / creation of new season
     private Season currentSeason = new Season();
 
-    // DATA FROM OTHER CONTROLLERS
+    // PARENT CONTROLLER
+    MainMenuController parentController;
 
-    // ConfirmationDialogController
+    public MainMenuController getParentController() {
+        return parentController;
+    }
+
+    public void setParentController(MainMenuController parentController) {
+        this.parentController = parentController;
+    }
 
     /**
      * Receives answer from confirmation dialog after hitting "Utwórz sezon"
      */
-    boolean answer;
+    private boolean answer;
 
     // GUI COMPONENTS
 
@@ -66,6 +73,14 @@ public class DialogNewSeasonController implements Initializable {
     @FXML
     private Button buttonCreateTournament;
 
+    public boolean getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(boolean answer) {
+        this.answer = answer;
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listViewPlayers.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -79,18 +94,25 @@ public class DialogNewSeasonController implements Initializable {
      * @throws Exception
      */
     public boolean displayConfirmationDialog() throws Exception {
-        Stage window = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("ConfirmationDialog.fxml"));
-        window.setScene(new Scene(root));
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Potwierdź");
-        window.setResizable(false);
-        window.showAndWait();
-        return answer;
-    }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("ConfirmationDialog.fxml"));
+        Parent root = loader.load();
 
-    public void answerFromConfirmationDialog(boolean answer) {
-        this.answer = answer;
+        Scene confirmDialogScene = new Scene(root);
+
+        // Provide DialogNewSeasonController object to child controller
+        ConfirmationDialogController childController = loader.getController();
+        childController.setParentController(this);
+
+        // Set and display stage
+        Stage modalDialog = new Stage();
+        modalDialog.setScene(confirmDialogScene);
+        modalDialog.initModality(Modality.APPLICATION_MODAL);
+        modalDialog.setTitle("Potwierdź");
+        modalDialog.setResizable(false);
+        modalDialog.showAndWait();
+
+        return answer;
     }
 
     @FXML
@@ -125,6 +147,11 @@ public class DialogNewSeasonController implements Initializable {
                     // create new season object (currentSeason)
                     currentSeason.setPlayers(playerHashMap);
                     currentSeason = new Season(LocalDate.now(), playerHashMap);
+                    // handle 'yes'
+                    parentController.setSeasonCreated(true);
+                } else {
+                    // handle 'no'
+                    parentController.setSeasonCreated(false);
                 }
 
                 // close window

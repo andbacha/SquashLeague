@@ -15,7 +15,16 @@ import java.util.ResourceBundle;
 
 public class ConfirmationDialogController implements Initializable {
 
-    boolean answer;
+    // PARENT CONTROLLER
+    DialogNewSeasonController parentController;
+
+    public DialogNewSeasonController getParentController() {
+        return parentController;
+    }
+
+    public void setParentController(DialogNewSeasonController parentController) {
+        this.parentController = parentController;
+    }
 
     @FXML
     private Label labelWarningDialogMessage;
@@ -28,22 +37,18 @@ public class ConfirmationDialogController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 
     @FXML
     void handleButtonNo(ActionEvent event) {
-
+        parentController.setAnswer(false);
+        Stage confirmationDialog = (Stage)((Node)event.getSource()).getScene().getWindow();
+        confirmationDialog.close();
     }
 
     @FXML
-    void handleButtonYes(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("DialogNewSeason.fxml"));
-        loader.load();
-
-        DialogNewSeasonController controller = loader.getController();
-        controller.answerFromConfirmationDialog(true);
-
+    void handleButtonYes(ActionEvent event) {
+        parentController.setAnswer(true);
         Stage confirmationDialog = (Stage)((Node)event.getSource()).getScene().getWindow();
         confirmationDialog.close();
     }
