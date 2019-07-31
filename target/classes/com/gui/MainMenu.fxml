@@ -8,11 +8,12 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ToolBar?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MainMenuController">
+<?import javafx.scene.layout.AnchorPane?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MainMenuController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -71,12 +72,12 @@
    <left>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <Hyperlink fx:id="hyperlinkMatches" onAction="#setCenterContent" text="Mecze" />
-            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContent" text="Tabela" />
-            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zawodnicy" />
-            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContent" text="Klasyfikacja sezonu" />
-            <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#setCenterContent" text="Zasady turnieju" />
-            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#setCenterContent" text="Zasady sezonu" />
+            <Hyperlink fx:id="hyperlinkMatches" onAction="#hyperlinkClick" text="Mecze" />
+            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#hyperlinkClick" text="Tabela" />
+            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zawodnicy" />
+            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#hyperlinkClick" text="Klasyfikacja sezonu" />
+            <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zasady turnieju" />
+            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#hyperlinkClick" text="Zasady sezonu" />
             <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#displayWarningDialog" text="Zakończ turniej" />
             <Hyperlink fx:id="hyperlinkEndSeason" layoutX="10.0" layoutY="148.0" onAction="#displayWarningDialog" text="Zakończ sezon" />
          </children>
@@ -86,6 +87,6 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane fx:id="anchorPaneCenterContent" />
+     <AnchorPane fx:id="paneCenterContent" />
    </center>
 </BorderPane>

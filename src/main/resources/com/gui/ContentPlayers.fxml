@@ -7,13 +7,13 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentPlayers">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="200.0">
+      <ToolBar>
         <items>
-          <Button mnemonicParsing="false" text="Dodaj" />
-            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Modyfikuj" />
-            <Button layoutX="20.0" layoutY="20.0" mnemonicParsing="false" text="Usuń" />
+          <Button fx:id="buttonAddPlayer" mnemonicParsing="false" onAction="#addPlayer" text="Dodaj" />
+            <Button fx:id="buttonModifyPlayer" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modifyPlayer" text="Modyfikuj" />
+            <Button fx:id="buttonRemovePlayer" layoutX="20.0" layoutY="20.0" mnemonicParsing="false" onAction="#removePlayer" text="Usuń" />
         </items>
       </ToolBar>
-      <ListView prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+      <ListView fx:id="listViewPlayers" VBox.vgrow="ALWAYS" />
    </children>
 </VBox>

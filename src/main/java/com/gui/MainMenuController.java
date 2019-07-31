@@ -1,5 +1,6 @@
 package com.gui;
 
+import com.app.Season;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -22,9 +24,18 @@ import java.util.ResourceBundle;
 
 public class MainMenuController implements Initializable {
 
+    // FIELDS - LOGIC
+
     boolean isSeasonCreated;
 
+    Season currentSeason;
+
     // GUI COMPONENTS
+
+    @FXML
+    private AnchorPane paneCenterContent;
+
+    private Pane paneChildCenterContent;
 
     @FXML
     private MenuItem menuNewSeason;
@@ -107,9 +118,6 @@ public class MainMenuController implements Initializable {
     @FXML
     private Hyperlink hyperlinkEndSeason;
 
-    @FXML
-    private AnchorPane anchorPaneCenterContent;
-
     /**
      * Hyperlinks HashMap for Hyperlink <-> destination Scene FXML mapping.
      */
@@ -121,6 +129,14 @@ public class MainMenuController implements Initializable {
 
     public void setSeasonCreated(boolean seasonCreated) {
         isSeasonCreated = seasonCreated;
+    }
+
+    public Season getCurrentSeason() {
+        return currentSeason;
+    }
+
+    public void setCurrentSeason(Season currentSeason) {
+        this.currentSeason = currentSeason;
     }
 
     @Override
@@ -135,14 +151,30 @@ public class MainMenuController implements Initializable {
      * Set central content of main menu window.
      * @param fxmlFile path to FXML file of layout
      */
-    public void setCenterContent(String fxmlFile) throws IOException {
-        Pane centerContent = FXMLLoader.load(getClass().getResource(fxmlFile));
-        anchorPaneCenterContent.getChildren().clear();
-        anchorPaneCenterContent.getChildren().add(centerContent);
-        AnchorPane.setTopAnchor(centerContent, 0.0);
-        AnchorPane.setBottomAnchor(centerContent, 0.0);
-        AnchorPane.setLeftAnchor(centerContent, 0.0);
-        AnchorPane.setRightAnchor(centerContent, 0.0);
+    public FXMLLoader setCenterContent(String fxmlFile) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(fxmlFile));
+        Parent root = loader.load();
+
+        paneCenterContent.getChildren().clear();
+        AnchorPane.setTopAnchor(root, 0d);
+        AnchorPane.setBottomAnchor(root, 0d);
+        AnchorPane.setLeftAnchor(root, 0d);
+        AnchorPane.setRightAnchor(root, 0d);
+        paneCenterContent.getChildren().add(root);
+
+        return loader;
+    }
+
+    public void setCenterContentPlayers() throws IOException {
+        FXMLLoader loader = setCenterContent("ContentPlayers.fxml");
+
+        // Provide DialogNewSeasonController object to child controller
+        ContentPlayers childController = loader.getController();
+        childController.setParentController(this);
+
+        // Fill players' list
+        childController.fillPlayers(currentSeason.getPlayers().keySet());
     }
 
     /**
@@ -297,7 +329,7 @@ public class MainMenuController implements Initializable {
         if (isSeasonCreated) {
             setHyperlinkStatesWhenSeasonOpened(true);
             enableMenuItemsWhenSeasonOpened();
-            setCenterContent("ContentMatches.fxml");
+            setCenterContentPlayers();
         }
     }
 

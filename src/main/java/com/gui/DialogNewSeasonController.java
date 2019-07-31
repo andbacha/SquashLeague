@@ -144,11 +144,10 @@ public class DialogNewSeasonController implements Initializable {
                         playerHashMap.put(playerName, new Player(playerName));
                     }
 
-                    // create new season object (currentSeason)
-                    currentSeason.setPlayers(playerHashMap);
-                    currentSeason = new Season(LocalDate.now(), playerHashMap);
+                    // create new season object and pass it to MainMenuController
+                    parentController.setCurrentSeason(new Season(LocalDate.now(), playerHashMap));
 
-                    // handle 'yes'
+                    // handle 'yes', TODO: redundant variable?
                     parentController.setSeasonCreated(true);
 
                     // close window
