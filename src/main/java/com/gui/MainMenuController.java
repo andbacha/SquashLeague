@@ -1,6 +1,8 @@
 package com.gui;
 
+import com.app.Player;
 import com.app.Season;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,6 +23,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class MainMenuController implements Initializable {
 
@@ -177,6 +180,19 @@ public class MainMenuController implements Initializable {
         childController.fillPlayers(currentSeason.getPlayers().keySet());
     }
 
+    public void setCenterContentSeasonTable() throws IOException {
+        FXMLLoader loader = setCenterContent("ContentSeasonTable.fxml");
+
+        // Provide DialogNewSeasonController object to child controller
+        ContentSeasonTable childController = loader.getController();
+        childController.setParentController(this);
+
+        // Fill season table
+        childController.setPlayers((Set<Player>) currentSeason.getPlayers().values());
+        childController.fillSeasonTable();
+    }
+
+    @Deprecated
     /**
      * Set central content of main menu - action is triggered by all of the Hyperlink items placed on the left side of UI.
      * @param actionEvent

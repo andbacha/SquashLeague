@@ -8,11 +8,20 @@ public class Season {
 
     // PRIVATE FIELDS
 
-    // start date of the season
+    /**
+     * Start date of the season
+     */
     private LocalDate startDate;
-    // list of tournaments included in season
+
+    /**
+     * List of tournaments included in season
+     */
     private ArrayList<Tournament> tournaments;
-    // list of players
+
+    /**
+     * List of players (key: player name, value: Player object)
+     * TODO: replace HashMap with simple Set or ArrayList
+     */
     private HashMap<String, Player> players;
 
     public class Rules {

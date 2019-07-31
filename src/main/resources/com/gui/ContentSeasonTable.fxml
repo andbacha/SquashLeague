@@ -6,11 +6,11 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentSeasonTable">
    <children>
-      <TableView VBox.vgrow="ALWAYS">
+      <TableView fx:id="tableViewSeason" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="75.0" text="Miejsce" />
-          <TableColumn prefWidth="75.0" text="Zawodnik" />
-            <TableColumn prefWidth="75.0" text="Punkty" />
+          <TableColumn fx:id="columnPlace" prefWidth="75.0" text="Miejsce" />
+          <TableColumn fx:id="columnPlayer" prefWidth="150.0" text="Zawodnik" />
+            <TableColumn fx:id="columnPoints" prefWidth="75.0" text="Punkty" />
         </columns>
       </TableView>
    </children>
