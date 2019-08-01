@@ -6,10 +6,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentSeasonRules">
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentSeasonRules">
    <children>
+      <Label text="Zasady sezonu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <HBox spacing="10.0">
         <children>
           <Label mouseTransparent="true" prefHeight="25.0" text="Docelowa liczba punktów" HBox.hgrow="ALWAYS" />
@@ -23,6 +28,6 @@
       </HBox>
    </children>
    <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
    </padding>
 </VBox>
