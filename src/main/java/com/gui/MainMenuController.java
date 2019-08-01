@@ -287,10 +287,13 @@ public class MainMenuController implements Initializable {
 
         // menu "Edytuj"
         menuModifyPlayer.setDisable(state);
+        menuModifyTournament.setDisable(state);
         menuRemovePlayer.setDisable(state);
+        menuRemoveTournament.setDisable(state);
 
         // toolbar buttons
         buttonNewTournament.setDisable(state);
+        buttonRemoveTournament.setDisable(state);
         buttonImportPlayers.setDisable(state);
         buttonExportPlayers.setDisable(state);
     }

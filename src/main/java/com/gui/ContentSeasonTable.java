@@ -64,6 +64,5 @@ public class ContentSeasonTable implements Initializable {
 
     public void fillSeasonTable() {
         tableViewSeason.setItems(getPlayer());
-//        tableViewSeason.getColumns().addAll(columnPlace, columnPlayer, columnPoints);
     }
 }
