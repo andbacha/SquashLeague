@@ -188,7 +188,7 @@ public class MainMenuController implements Initializable {
         childController.setParentController(this);
 
         // Fill season table
-        childController.setPlayers((Set<Player>) currentSeason.getPlayers().values());
+        childController.setPlayers(currentSeason.getPlayers());
         childController.fillSeasonTable();
     }
 
