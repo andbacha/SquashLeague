@@ -99,13 +99,19 @@ public class ContentPlayersController implements Initializable {
 
     @FXML
     void modifyPlayer(ActionEvent event) {
-
+        ObservableList<String> playerToModify;
+        playerToModify = listViewPlayers.getSelectionModel().getSelectedItems();
     }
 
     @FXML
     void removePlayer(ActionEvent event) {
         ObservableList<String> playersToRemove;
         playersToRemove = listViewPlayers.getSelectionModel().getSelectedItems();
+        for (String player : playersToRemove) {
+            if (parentController.getCurrentSeason().getPlayers().keySet().contains(player)) {
+                parentController.getCurrentSeason().getPlayers().remove(player);
+            }
+        }
         listViewPlayers.getItems().removeAll(playersToRemove);
         if (listViewPlayers.getItems().equals(FXCollections.emptyObservableList())) {
             buttonRemovePlayer.setDisable(true);

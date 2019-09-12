@@ -174,7 +174,7 @@ public class MainMenuController implements Initializable {
 
         // Fill players' list
         childController.setPlayers(currentSeason.getPlayers().keySet());
-        childController.fillPlayers(currentSeason.getPlayers().keySet());
+        childController.fillPlayers(childController.getPlayers());
     }
 
     public void setCenterContentSeasonTable() throws IOException {
@@ -211,11 +211,11 @@ public class MainMenuController implements Initializable {
         loader.setLocation(getClass().getResource(fxmlFile));
         Parent root = loader.load();
 
-        Scene modalDialogScene = new Scene(root);
-
         // Provide MainMenuController object to child controller
         DialogNewSeasonController childController = loader.getController();
         childController.setParentController(this);
+
+        Scene modalDialogScene = new Scene(root);
 
         // Set and display stage
         Stage modalDialog = new Stage();
