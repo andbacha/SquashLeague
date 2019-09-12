@@ -11,7 +11,7 @@ public abstract class FXMLMapping {
     public static HashMap<String, String> getHyperlinks() {
         hyperlinks.put("hyperlinkMatches", "ContentMatches.fxml");
         hyperlinks.put("hyperlinkTournamentTable", "ContentTournamentTable.fxml");
-        hyperlinks.put("hyperlinkPlayers", "ContentPlayers.fxml");
+        hyperlinks.put("hyperlinkPlayers", "ContentPlayersController.fxml");
         hyperlinks.put("hyperlinkSeasonTable", "ContentSeasonTable.fxml");
         hyperlinks.put("hyperlinkTournamentRules", "ContentTournamentRules.fxml");
         hyperlinks.put("hyperlinkSeasonRules", "ContentSeasonRules.fxml");

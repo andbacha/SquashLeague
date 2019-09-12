@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MainMenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MainMenuController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
                               <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
-                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" text="Wczytaj sezon" />
+                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" onAction="#handleMenuLoadSeason" text="Wczytaj sezon" />
                               <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
                               <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
                               <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />
@@ -72,7 +72,7 @@
       <VBox BorderPane.alignment="CENTER">
          <children>
             <Hyperlink fx:id="hyperlinkMatches" onAction="#hyperlinkClick" text="Mecze" />
-            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#hyperlinkClick" text="Tabela" />
+            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#hyperlinkClick" text="Tabela turnieju" />
             <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContentPlayers" text="Zawodnicy" />
             <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContentSeasonTable" text="Klasyfikacja sezonu" />
             <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zasady turnieju" />

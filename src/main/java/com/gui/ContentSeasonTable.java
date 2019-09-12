@@ -46,6 +46,7 @@ public class ContentSeasonTable implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        players = parentController.getCurrentSeason().getPlayers();
         columnPlace.setCellValueFactory(new PropertyValueFactory<>("seasonPlace"));
         columnPlayer.setCellValueFactory(new PropertyValueFactory<>("playerName"));
         columnPoints.setCellValueFactory(new PropertyValueFactory<>("seasonPoints"));

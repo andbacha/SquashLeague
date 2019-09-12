@@ -21,7 +21,7 @@
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
                               <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
-                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" text="Wczytaj sezon" />
+                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" onAction="#handleMenuLoadSeason" text="Wczytaj sezon" />
                               <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
                               <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
                               <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />

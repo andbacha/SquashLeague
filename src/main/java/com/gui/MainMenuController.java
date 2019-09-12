@@ -1,8 +1,7 @@
 package com.gui;
 
-import com.app.Player;
 import com.app.Season;
-import javafx.collections.ObservableList;
+import com.utils.SeasonXmlParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,15 +14,15 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.Region;
+import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 public class MainMenuController implements Initializable {
 
@@ -31,7 +30,7 @@ public class MainMenuController implements Initializable {
 
     boolean isSeasonCreated;
 
-    Season currentSeason;
+    Season currentSeason = new Season();
 
     // GUI COMPONENTS
 
@@ -170,13 +169,11 @@ public class MainMenuController implements Initializable {
     }
 
     public void setCenterContentPlayers() throws IOException {
-        FXMLLoader loader = setCenterContent("ContentPlayers.fxml");
-
-        // Provide DialogNewSeasonController object to child controller
-        ContentPlayers childController = loader.getController();
+        ContentPlayersController childController = setCenterContent("ContentPlayers.fxml").getController();
         childController.setParentController(this);
 
         // Fill players' list
+        childController.setPlayers(currentSeason.getPlayers().keySet());
         childController.fillPlayers(currentSeason.getPlayers().keySet());
     }
 
@@ -363,4 +360,20 @@ public class MainMenuController implements Initializable {
         disableEnableMenuItems(false);
     }
 
+    public void handleMenuLoadSeason(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Wybierz plik sezonu");
+        File seasonFile = fileChooser.showOpenDialog(null);
+        if (seasonFile.exists()) {
+            currentSeason = SeasonXmlParser.seasonParser(seasonFile);
+            System.out.println(currentSeason.getStartDate().toString() + "\n" + currentSeason.getPlayers());
+            setHyperlinkStatesWhenSeasonOpened(true);
+            enableMenuItemsWhenSeasonOpened();
+            try {
+                setCenterContentPlayers();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

@@ -1,6 +1,7 @@
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\MainMenuController.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentTournamentRules.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\app\Season.java
+D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentPlayersController.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\Main.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\WarningDialogController.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentSeasonRules.java
@@ -13,6 +14,7 @@ D:\JavaProjects\DziadoligaEditor\src\main\java\com\app\Player.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentTournamentTable.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\FXMLMapping.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\app\Tournament.java
-D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentPlayers.java
+D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\DialogAddPlayerController.java
+D:\JavaProjects\DziadoligaEditor\src\main\java\com\utils\SeasonXmlParser.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\ContentMatches.java
 D:\JavaProjects\DziadoligaEditor\src\main\java\com\gui\DialogNewSeasonController.java

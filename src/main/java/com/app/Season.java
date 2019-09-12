@@ -32,7 +32,8 @@ public class Season {
     // CONSTRUCTORS
 
     public Season() {
-
+        this.startDate = LocalDate.now();
+        this.players = new HashMap<>();
     }
 
     public Season(LocalDate startDate, HashMap<String, Player> players) {
