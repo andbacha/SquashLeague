@@ -6,6 +6,7 @@ com\app\Player.class
 com\gui\Launcher.class
 com\app\Season$Rules.class
 com\gui\FXMLMapping.class
+com\gui\DialogModifyPlayer.class
 com\gui\DialogNewTournament.class
 com\utils\SeasonXmlParser.class
 com\gui\ContentPlayersController.class

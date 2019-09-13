@@ -120,6 +120,9 @@ public class MainMenuController implements Initializable {
     @FXML
     private Hyperlink hyperlinkEndSeason;
 
+    // modal dialog
+    Stage modalDialog;
+
     /**
      * Hyperlinks HashMap for Hyperlink <-> destination Scene FXML mapping.
      */
@@ -206,24 +209,20 @@ public class MainMenuController implements Initializable {
      * @param fxmlFile path to FXML file for scene template
      * @throws Exception
      */
-    public void openModalDialog(String title, String fxmlFile) throws Exception {
+    public FXMLLoader openModalDialog(String title, String fxmlFile) throws Exception {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Parent root = loader.load();
 
-        // Provide MainMenuController object to child controller
-        DialogNewSeasonController childController = loader.getController();
-        childController.setParentController(this);
-
         Scene modalDialogScene = new Scene(root);
 
         // Set and display stage
-        Stage modalDialog = new Stage();
+        modalDialog = new Stage();
         modalDialog.setScene(modalDialogScene);
         modalDialog.initModality(Modality.APPLICATION_MODAL);
         modalDialog.setTitle(title);
         modalDialog.setResizable(false);
-        modalDialog.showAndWait();
+        return loader;
     }
 
     /**
@@ -341,7 +340,12 @@ public class MainMenuController implements Initializable {
      * @throws Exception
      */
     public void handleActionNewSeason(ActionEvent actionEvent) throws Exception {
-        openModalDialog("Nowy sezon", "DialogNewSeason.fxml");
+        FXMLLoader loader = openModalDialog("Nowy sezon", "DialogNewSeason.fxml");
+        // Provide MainMenuController object to child controller
+        DialogNewSeasonController childController = loader.getController();
+        childController.setParentController(this);
+        modalDialog.showAndWait();
+
         if (isSeasonCreated) {
             setHyperlinkStatesWhenSeasonOpened(true);
             enableMenuItemsWhenSeasonOpened();
@@ -355,7 +359,11 @@ public class MainMenuController implements Initializable {
      * @throws Exception
      */
     public void handleActionNewTournament(ActionEvent actionEvent) throws Exception {
-//        openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
+        FXMLLoader loader = openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
+        // Provide MainMenuController object to child controller
+        DialogNewTournament childController = loader.getController();
+        childController.setParentController(this);
+        modalDialog.showAndWait();
         setHyperlinkStates(true);
         disableEnableMenuItems(false);
     }
