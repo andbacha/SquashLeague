@@ -366,7 +366,6 @@ public class MainMenuController implements Initializable {
         File seasonFile = fileChooser.showOpenDialog(null);
         if (seasonFile.exists()) {
             currentSeason = SeasonXmlParser.seasonParser(seasonFile);
-            System.out.println(currentSeason.getStartDate().toString() + "\n" + currentSeason.getPlayers());
             setHyperlinkStatesWhenSeasonOpened(true);
             enableMenuItemsWhenSeasonOpened();
             try {

@@ -98,9 +98,33 @@ public class ContentPlayersController implements Initializable {
     }
 
     @FXML
-    void modifyPlayer(ActionEvent event) {
+    void modifyPlayer(ActionEvent event) throws IOException {
         ObservableList<String> playerToModify;
         playerToModify = listViewPlayers.getSelectionModel().getSelectedItems();
+        if (playerToModify.size() == 1) {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("DialogModifyPlayer.fxml"));
+            Parent root = loader.load();
+
+            Scene modalDialogScene = new Scene(root);
+
+            // Provide MainMenuController object to child controller
+            DialogModifyPlayer childController = loader.getController();
+            childController.setCurrentPlayerName(playerToModify.get(0));
+            childController.setParentController(this);
+
+            // Set and display stage
+            Stage modalDialog = new Stage();
+            modalDialog.setScene(modalDialogScene);
+            modalDialog.initModality(Modality.APPLICATION_MODAL);
+            modalDialog.setTitle("Modyfikuj zawodnika");
+            modalDialog.setResizable(false);
+            modalDialog.showAndWait();
+
+            // clear and fill new list
+            listViewPlayers.getItems().clear();
+            fillPlayers(players);
+        }
     }
 
     @FXML
