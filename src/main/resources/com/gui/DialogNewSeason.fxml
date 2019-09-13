@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.HBox?>
@@ -11,59 +12,64 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="dialogNewSeason" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeasonController">
-   <children>
-      <Label text="Nowy sezon">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
-      <HBox>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeasonController">
+   <content>
+      <VBox fx:id="dialogNewSeason" spacing="10.0">
          <children>
-            <Label text="Dodaj zawodników">
+            <Label text="Nowy sezon">
                <font>
-                  <Font size="18.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="buttonImportPlayers" mnemonicParsing="false" text="Importuj zawodników z pliku..." />
-         </children>
-      </HBox>
-      <HBox spacing="10.0">
-         <children>
-            <TextField fx:id="textFieldPlayerName" prefWidth="250.0" promptText="Imię / pseudonim" HBox.hgrow="ALWAYS" />
-          <Button fx:id="buttonAddPlayer" mnemonicParsing="false" onAction="#handleButtonAddPlayer" text="Dodaj" />
-            <Button fx:id="buttonRemovePlayer" mnemonicParsing="false" onAction="#handleButtonRemovePlayer" text="Usuń" />
-         </children>
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-      </HBox>
-      <TitledPane animated="false" text="Lista zawodników">
-         <content>
-            <ListView fx:id="listViewPlayers" prefHeight="200.0" prefWidth="200.0" />
-         </content>
-      </TitledPane>
-     <TitledPane animated="false" layoutX="10.0" layoutY="45.0" text="Zasady">
-         <content>
-            <HBox spacing="10.0">
+            <HBox>
                <children>
-                  <Label prefHeight="25.0" text="Docelowa liczba punktów" HBox.hgrow="ALWAYS" />
-                  <TextField fx:id="textFieldTargetPoints" HBox.hgrow="ALWAYS" />
+                  <Label text="Dodaj zawodników">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <Button fx:id="buttonImportPlayers" mnemonicParsing="false" text="Importuj zawodników z pliku..." />
                </children>
             </HBox>
-         </content>
-     </TitledPane>
-      <HBox alignment="TOP_RIGHT">
-         <VBox.margin>
-            <Insets />
-         </VBox.margin>
-         <children>
-            <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateSeason" text="Utwórz sezon" />
+            <HBox spacing="10.0">
+               <children>
+                  <TextField fx:id="textFieldPlayerName" prefWidth="250.0" promptText="Imię / pseudonim" HBox.hgrow="ALWAYS" />
+                <Button fx:id="buttonAddPlayer" mnemonicParsing="false" onAction="#handleButtonAddPlayer" text="Dodaj" />
+                  <Button fx:id="buttonRemovePlayer" mnemonicParsing="false" onAction="#handleButtonRemovePlayer" text="Usuń" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <TitledPane animated="false" text="Lista zawodników">
+               <content>
+                  <ListView fx:id="listViewPlayers" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+           <TitledPane animated="false" layoutX="10.0" layoutY="45.0" text="Zasady">
+               <content>
+                  <HBox spacing="10.0">
+                     <children>
+                        <Label prefHeight="25.0" text="Docelowa liczba punktów" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="textFieldTargetPoints" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </content>
+           </TitledPane>
+            <HBox alignment="TOP_RIGHT">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="buttonCreateTournament" mnemonicParsing="false" onAction="#handleButtonCreateSeason" text="Utwórz sezon" />
+               </children>
+            </HBox>
          </children>
-      </HBox>
-   </children>
-   <padding>
-      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-   </padding>
-</VBox>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>
