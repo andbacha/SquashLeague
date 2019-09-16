@@ -1,6 +1,7 @@
 package com.gui;
 
 import com.app.Season;
+import com.app.Tournament;
 import com.utils.SeasonXmlParser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,8 +32,9 @@ public class MainMenuController implements Initializable {
     boolean isSeasonCreated;
 
     Season currentSeason = new Season();
+    Tournament currentTournament = new Tournament();
 
-    // GUI COMPONENTS
+// GUI COMPONENTS
 
     @FXML
     private AnchorPane paneCenterContent;
@@ -142,6 +144,14 @@ public class MainMenuController implements Initializable {
 
     public void setCurrentSeason(Season currentSeason) {
         this.currentSeason = currentSeason;
+    }
+
+    public Tournament getCurrentTournament() {
+        return currentTournament;
+    }
+
+    public void setCurrentTournament(Tournament currentTournament) {
+        this.currentTournament = currentTournament;
     }
 
     @Override
@@ -362,6 +372,7 @@ public class MainMenuController implements Initializable {
         FXMLLoader loader = openModalDialog("Nowy turniej", "DialogNewTournament.fxml");
         // Provide MainMenuController object to child controller
         DialogNewTournament childController = loader.getController();
+        childController.fillSeasonPlayers(currentSeason.getPlayers().keySet());
         childController.setParentController(this);
         modalDialog.showAndWait();
         setHyperlinkStates(true);

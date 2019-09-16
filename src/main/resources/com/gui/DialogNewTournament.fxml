@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewTournament">
+<ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewTournament">
    <content>
       <VBox fx:id="dialogNewSeason" fillWidth="false" spacing="10.0">
          <children>
@@ -23,26 +23,35 @@
                   <Font name="System Bold" size="24.0" />
                </font>
             </Label>
-            <HBox>
-               <children>
-                  <Label text="Dodaj zawodników">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </HBox>
-            <TitledPane animated="false" text="Lista dostępnych zawodników">
+            <Label text="Dodaj zawodników">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TitledPane animated="false" prefWidth="365.0" text="Lista dostępnych zawodników">
                <content>
                   <ListView fx:id="listViewSeasonPlayers" prefHeight="150.0" />
                </content>
            </TitledPane>
-            <TitledPane animated="false" layoutX="20.0" layoutY="102.0" text="Lista zawodników zgłoszonych do turnieju">
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="365.0" spacing="10.0">
+               <children>
+                  <Button fx:id="buttonAddPlayer" mnemonicParsing="false" onAction="#handleButtonAddPlayer" text="↓">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
+                  <Button fx:id="buttonRemovePlayer" mnemonicParsing="false" onAction="#handleButtonRemovePlayer" text="↑">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <TitledPane animated="false" layoutX="20.0" layoutY="102.0" prefWidth="365.0" text="Lista zawodników zgłoszonych do turnieju">
                <content>
                   <ListView fx:id="listViewTournamentPlayers" prefHeight="150.0" />
                </content>
             </TitledPane>
-            <TitledPane animated="false" layoutX="10.0" layoutY="45.0" text="Zasady">
+            <TitledPane animated="false" layoutX="10.0" layoutY="45.0" prefWidth="365.0" text="Zasady">
                <content>
                   <VBox spacing="10.0">
                      <children>
@@ -85,10 +94,10 @@
                         </TitledPane>
                         <TitledPane animated="false" text="Punktacja za miejsca">
                            <content>
-                              <TableView>
+                              <TableView fx:id="tableViewPointsPerStanding" editable="true" prefHeight="150.0">
                                  <columns>
-                                    <TableColumn editable="false" prefWidth="75.0" sortable="false" text="Miejsce" />
-                                    <TableColumn prefWidth="75.0" sortable="false" text="Punkty" />
+                                    <TableColumn fx:id="tableColumnStanding" editable="false" prefWidth="75.0" sortable="false" text="Miejsce" />
+                                    <TableColumn fx:id="tableColumnPoints" onEditCommit="#editPoints" prefWidth="75.0" sortable="false" text="Punkty" />
                                  </columns>
                               </TableView>
                            </content>
