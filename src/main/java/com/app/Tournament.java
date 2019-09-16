@@ -1,6 +1,7 @@
 package com.app;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Tournament {
@@ -8,7 +9,24 @@ public class Tournament {
     // start date of the tournament
     private LocalDate startDate;
     // player list
-    private HashMap<String, Player> players;
+    private ArrayList<Player> players;
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    // use calendar picker
+    public void setStartDate() {
+        this.startDate = LocalDate.now();
+    }
+
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void setPlayers(ArrayList<Player> players) {
+        this.players = players;
+    }
 
     public static class PointsPerStanding {
         private int standing;

@@ -32,7 +32,9 @@ public class MainMenuController implements Initializable {
     boolean isSeasonCreated;
 
     Season currentSeason = new Season();
+    int seasonEndPoints;
     Tournament currentTournament = new Tournament();
+    Tournament.PointsPerStanding tournamentRules;
 
 // GUI COMPONENTS
 
@@ -185,7 +187,7 @@ public class MainMenuController implements Initializable {
         ContentPlayersController childController = setCenterContent("ContentPlayers.fxml").getController();
         childController.setParentController(this);
 
-        // Fill players' list
+        // Fill playerNames' list
         childController.setPlayers(currentSeason.getPlayers().keySet());
         childController.fillPlayers(childController.getPlayers());
     }
@@ -200,6 +202,14 @@ public class MainMenuController implements Initializable {
         // Fill season table
         childController.setPlayers(currentSeason.getPlayers());
         childController.fillSeasonTable();
+    }
+
+    public void setCenterContentTournamentTable() throws IOException {
+        ContentTournamentTable childController = setCenterContent("ContentTournamentTable.fxml").getController();
+        childController.setParentController(this);
+
+        // Fill playerNames' list
+        childController.fillTournamentTable();
     }
 
     @Deprecated
@@ -377,6 +387,7 @@ public class MainMenuController implements Initializable {
         modalDialog.showAndWait();
         setHyperlinkStates(true);
         disableEnableMenuItems(false);
+        // TODO fill tournament table
     }
 
     public void handleMenuLoadSeason(ActionEvent actionEvent) {

@@ -95,7 +95,7 @@ public class DialogAddPlayerController implements Initializable {
         ObservableList<String> players = listViewPlayers.getItems();
         Set<String> playersToAdd = new TreeSet<>();
 
-        // HashMap - players dictionary
+        // HashMap - playerNames dictionary
         HashMap<String, Player> playerHashMap = parentController.getParentController().getCurrentSeason().getPlayers();
         for (String playerName : players) {
             playerHashMap.put(playerName, new Player(playerName));

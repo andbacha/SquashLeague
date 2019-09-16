@@ -138,7 +138,7 @@ public class DialogNewSeasonController implements Initializable {
             } else {
                 // display confirmation dialog, if answer is yes - proceed
                 if (displayConfirmationDialog()) {
-                    // HashMap - players dictionary
+                    // HashMap - playerNames dictionary
                     HashMap<String, Player> playerHashMap = new HashMap<>();
                     for (String playerName : players) {
                         playerHashMap.put(playerName, new Player(playerName));

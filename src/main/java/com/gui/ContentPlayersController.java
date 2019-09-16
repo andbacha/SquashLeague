@@ -69,8 +69,8 @@ public class ContentPlayersController implements Initializable {
     // PUBLIC METHODS
 
     /**
-     * Fill table of players in MainMenu content
-     * @param players players' names
+     * Fill table of playerNames in MainMenu content
+     * @param players playerNames' names
      */
     void fillPlayers(Set<String> players) {
         listViewPlayers.getItems().addAll(players);

@@ -1,17 +1,22 @@
 package com.gui;
 
+import com.app.Player;
 import com.app.Tournament;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.ResourceBundle;
 import java.util.Set;
 
@@ -19,7 +24,11 @@ public class DialogNewTournament implements Initializable {
 
     MainMenuController parentController;
 
-    Tournament tournament;
+    Tournament tournament = new Tournament();
+
+    ObservableList<String> playerNames;
+
+    ArrayList<Player> players = new ArrayList<>();
 
     @FXML
     private VBox dialogNewSeason;
@@ -68,7 +77,20 @@ public class DialogNewTournament implements Initializable {
 
     @FXML
     void handleButtonCreateTournament(ActionEvent event) {
+        HashMap<String, Player> playersHashMap = parentController.getCurrentSeason().getPlayers();
+        for (String playerName : playerNames) {
+            players.add(playersHashMap.get(playerName));
+        }
+        tournament.setPlayers(players);
+        tournament.setStartDate();
+        parentController.setCurrentTournament(tournament);
 
+        // TODO confirm dialog
+
+        // close window
+        Node source = (Node) event.getSource();
+        Stage stage = (Stage) source.getScene().getWindow();
+        stage.close();
     }
 
     @Override
@@ -95,6 +117,7 @@ public class DialogNewTournament implements Initializable {
         ObservableList<String> selectedPlayers = source.getSelectionModel().getSelectedItems();
         destination.getItems().addAll(selectedPlayers);
         source.getItems().removeAll(selectedPlayers);
+        playerNames = listViewTournamentPlayers.getItems();
         int playerQty = listViewTournamentPlayers.getItems().size();
         fillRulesTable(playerQty);
     }
