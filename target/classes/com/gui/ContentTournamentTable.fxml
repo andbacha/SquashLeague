@@ -7,30 +7,30 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentTournamentTable">
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentTournamentTable">
    <children>
       <Label text="Tabela turnieju">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TableView VBox.vgrow="ALWAYS">
+      <TableView fx:id="tableViewTournament" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="50.0" text="Miejsce" />
-          <TableColumn prefWidth="150.0" text="Zawodnik" />
-            <TableColumn prefWidth="50.0" text="Punkty" />
+          <TableColumn fx:id="tableColumnStanding" prefWidth="50.0" text="Miejsce" />
+          <TableColumn fx:id="tableColumnPlayer" prefWidth="150.0" text="Zawodnik" />
+            <TableColumn fx:id="tableColumnPoints" prefWidth="50.0" text="Punkty" />
             <TableColumn text="Sety">
                <columns>
-                  <TableColumn prefWidth="50.0" text="Bilans" />
-                  <TableColumn prefWidth="30.0" text="+" />
-                  <TableColumn prefWidth="30.0" text="-" />
+                  <TableColumn fx:id="tableColumnSetBalance" prefWidth="50.0" text="Bilans" />
+                  <TableColumn fx:id="tableColumnSetsWon" prefWidth="30.0" text="+" />
+                  <TableColumn fx:id="tableColumnSetsLost" prefWidth="30.0" text="-" />
                </columns>
             </TableColumn>
             <TableColumn prefWidth="75.0" text="Małe punkty">
                <columns>
-                  <TableColumn prefWidth="50.0" text="Bilans" />
-                  <TableColumn prefWidth="30.0" text="+" />
-                  <TableColumn prefWidth="30.0" text="-" />
+                  <TableColumn fx:id="tableColumnPointBalance" prefWidth="50.0" text="Bilans" />
+                  <TableColumn fx:id="tableColumnPointsWon" prefWidth="30.0" text="+" />
+                  <TableColumn fx:id="tableColumnPointsLost" prefWidth="30.0" text="-" />
                </columns>
             </TableColumn>
         </columns>

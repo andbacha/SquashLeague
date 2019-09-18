@@ -1,7 +1,6 @@
 com\gui\SplashScreen.class
 com\gui\ContentTournamentRules.class
 com\gui\DialogNewSeasonController.class
-com\gui\ContentMatches.class
 com\app\Player.class
 com\gui\Launcher.class
 com\app\Season$Rules.class
@@ -13,9 +12,12 @@ com\gui\ContentPlayersController.class
 com\gui\MainMenuController.class
 com\app\Season.class
 com\gui\Main.class
+com\gui\ContentMatchesController.class
+com\app\Match.class
 com\app\Tournament$PointsPerStanding.class
 com\app\Tournament.class
 com\gui\ConfirmationDialogController.class
+com\app\MatchResult.class
 com\gui\ContentSeasonRules.class
 com\gui\WarningDialogController.class
 com\gui\ContentSeasonTable.class

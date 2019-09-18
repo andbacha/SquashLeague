@@ -1,5 +1,6 @@
 package com.gui;
 
+import com.app.Match;
 import com.app.Season;
 import com.app.Tournament;
 import com.utils.SeasonXmlParser;
@@ -212,6 +213,14 @@ public class MainMenuController implements Initializable {
         childController.fillTournamentTable();
     }
 
+    public void setCenterContentMatches() throws IOException {
+        ContentMatchesController childController = setCenterContent("ContentMatches.fxml").getController();
+        childController.setParentController(this);
+
+        // Fill playerNames' list
+        childController.fillTournamentTable();
+    }
+
     @Deprecated
     /**
      * Set central content of main menu - action is triggered by all of the Hyperlink items placed on the left side of UI.
@@ -387,7 +396,8 @@ public class MainMenuController implements Initializable {
         modalDialog.showAndWait();
         setHyperlinkStates(true);
         disableEnableMenuItems(false);
-        // TODO fill tournament table
+        currentTournament.setMatches(Match.generateMatches(currentTournament.getPlayers()));
+        setCenterContentTournamentTable();
     }
 
     public void handleMenuLoadSeason(ActionEvent actionEvent) {

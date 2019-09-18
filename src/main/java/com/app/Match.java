@@ -1,5 +1,7 @@
 package com.app;
 
+import java.util.ArrayList;
+
 public class Match {
 
     Player player1;
@@ -33,5 +35,21 @@ public class Match {
 
     public void setResult(MatchResult result) {
         this.result = result;
+    }
+
+    public static ArrayList<Match> generateMatches(ArrayList<Player> players) {
+        ArrayList<Match> matches = new ArrayList<>();
+        Match currentMatch;
+
+        for (int i = 0; i < players.size() - 1; i++) {
+            for (int j = i + 1; j < players.size(); j++) {
+                currentMatch = new Match(players.get(i), players.get(j));
+                matches.add(currentMatch);
+                currentMatch.getResult().setPlayer1(players.get(i).getPlayerName());
+                currentMatch.getResult().setPlayer2(players.get(j).getPlayerName());
+            }
+        }
+
+        return matches;
     }
 }

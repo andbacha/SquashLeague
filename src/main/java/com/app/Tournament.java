@@ -11,6 +11,8 @@ public class Tournament {
     // player list
     private ArrayList<Player> players;
 
+    private ArrayList<Match> matches;
+
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -26,6 +28,14 @@ public class Tournament {
 
     public void setPlayers(ArrayList<Player> players) {
         this.players = players;
+    }
+
+    public ArrayList<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(ArrayList<Match> matches) {
+        this.matches = matches;
     }
 
     public static class PointsPerStanding {
@@ -57,6 +67,8 @@ public class Tournament {
         public String getPointsPerStandingString() {
             return pointsPerStandingString;
         }
+
+
 
         public void setPointsPerStandingString(String pointsPerStandingString) {
             this.pointsPerStandingString = pointsPerStandingString;
