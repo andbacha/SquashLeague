@@ -8,9 +8,10 @@ public class Match {
     Player player2;
     MatchResult result;
 
-    public Match(Player player1, Player player2) {
+    public Match(Player player1, Player player2, MatchResult result) {
         this.player1 = player1;
         this.player2 = player2;
+        this.result = result;
     }
 
     public Player getPlayer1() {
@@ -43,7 +44,7 @@ public class Match {
 
         for (int i = 0; i < players.size() - 1; i++) {
             for (int j = i + 1; j < players.size(); j++) {
-                currentMatch = new Match(players.get(i), players.get(j));
+                currentMatch = new Match(players.get(i), players.get(j), new MatchResult());
                 matches.add(currentMatch);
                 currentMatch.getResult().setPlayer1(players.get(i).getPlayerName());
                 currentMatch.getResult().setPlayer2(players.get(j).getPlayerName());

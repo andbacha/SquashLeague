@@ -16,6 +16,8 @@ public class MatchResult {
     int player2SecondSet;
     int player2ThirdSet;
 
+    public MatchResult() {}
+
     public MatchResult(int player1Sets, int player2Sets) {
         this.player1Sets = player1Sets;
         this.player2Sets = player2Sets;
