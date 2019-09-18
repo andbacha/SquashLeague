@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -20,7 +19,6 @@
     <ToolBar>
       <items>
         <Button fx:id="buttonRemoveResult" mnemonicParsing="false" onAction="#handleButtonRemoveResult" text="Usuń wynik" />
-        <CheckBox fx:id="checkBoxShowSets" mnemonicParsing="false" onAction="#handleCheckBoxShowSets" text="Wyświetl wyniki setów" />
       </items>
       <VBox.margin>
         <Insets />
@@ -29,32 +27,11 @@
     <TableView fx:id="tableViewMatches" VBox.vgrow="ALWAYS">
       <columns>
         <TableColumn fx:id="tableColumnPlayer1" editable="false" prefWidth="100.0" text="Zawodnik 1" />
-        <TableColumn minWidth="5.0" prefWidth="20.0" resizable="false" text="vs" />
+        <TableColumn fx:id="tableColumnResult" prefWidth="70.0" text="Wynik" />
         <TableColumn fx:id="tableColumnPlayer2" editable="false" minWidth="0.0" prefWidth="100.0" text="Zawodnik 2" />
-        <TableColumn fx:id="tableColumnResult1" prefWidth="30.0" text="Wynik 1" />
-        <TableColumn prefWidth="20.0" resizable="false" text="vs" />
-        <TableColumn fx:id="tableColumnResult2" prefWidth="30.0" text="Wynik 2" />
-        <TableColumn prefWidth="30.0" text="Set 1">
-          <columns>
-            <TableColumn fx:id="tableColumnSet1P1" prefWidth="30.0" text="Wynik 1" />
-            <TableColumn prefWidth="20.0" resizable="false" text="vs" />
-            <TableColumn fx:id="tableColumnSet1P2" prefWidth="30.0" text="Wynik 2" />
-          </columns>
-        </TableColumn>
-        <TableColumn prefWidth="30.0" text="Set 2">
-          <columns>
-            <TableColumn fx:id="tableColumnSet2P1" prefWidth="30.0" text="Wynik 1" />
-            <TableColumn prefWidth="20.0" resizable="false" text="vs" />
-            <TableColumn fx:id="tableColumnSet2P2" prefWidth="30.0" text="Wynik 2" />
-          </columns>
-        </TableColumn>
-        <TableColumn prefWidth="30.0" text="Set 3">
-          <columns>
-            <TableColumn fx:id="tableColumnSet3P1" prefWidth="30.0" text="Wynik 1" />
-            <TableColumn prefWidth="20.0" resizable="false" text="vs" />
-            <TableColumn fx:id="tableColumnSet3P2" prefWidth="30.0" text="Wynik 2" />
-          </columns>
-        </TableColumn>
+            <TableColumn fx:id="tableColumnSet1" prefWidth="75.0" text="Set 1" />
+            <TableColumn fx:id="tableColumnSet2" prefWidth="75.0" text="Set 2" />
+            <TableColumn fx:id="tableColumnSet3" prefWidth="75.0" text="Set 3" />
       </columns>
     </TableView>
   </children>

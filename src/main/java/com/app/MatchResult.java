@@ -4,19 +4,28 @@ public class MatchResult {
 
     String player1;
     String player2;
+    String result;
+    String set1;
+    String set2;
+    String set3;
 
-    int player1Sets;
-    int player2Sets;
+    int player1Sets = 0;
+    int player2Sets = 0;
 
-    int player1FirstSet;
-    int player1SecondSet;
-    int player1ThirdSet;
+    int player1FirstSet = 0;
+    int player1SecondSet = 0;
+    int player1ThirdSet = 0;
 
-    int player2FirstSet;
-    int player2SecondSet;
-    int player2ThirdSet;
+    int player2FirstSet = 0;
+    int player2SecondSet = 0;
+    int player2ThirdSet = 0;
 
-    public MatchResult() {}
+    public MatchResult() {
+        this.result = player1Sets + ":" + player2Sets;
+        this.set1 = player1FirstSet + ":" + player2FirstSet;
+        this.set2 = player1SecondSet + ":" + player2SecondSet;
+        this.set3 = player1ThirdSet + ":" + player2ThirdSet;
+    }
 
     public MatchResult(int player1Sets, int player2Sets) {
         this.player1Sets = player1Sets;
@@ -53,6 +62,38 @@ public class MatchResult {
 
     public void setPlayer2(String player2) {
         this.player2 = player2;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getSet1() {
+        return set1;
+    }
+
+    public void setSet1(String set1) {
+        this.set1 = set1;
+    }
+
+    public String getSet2() {
+        return set2;
+    }
+
+    public void setSet2(String set2) {
+        this.set2 = set2;
+    }
+
+    public String getSet3() {
+        return set3;
+    }
+
+    public void setSet3(String set3) {
+        this.set3 = set3;
     }
 
     public int getPlayer1Sets() {

@@ -15,6 +15,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
 
+import javax.xml.transform.Result;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -29,48 +30,28 @@ public class ContentMatchesController implements Initializable {
     private Button buttonRemoveResult;
 
     @FXML
-    private CheckBox checkBoxShowSets;
-
-    @FXML
     private TableView<MatchResult> tableViewMatches;
 
     @FXML
     private TableColumn<MatchResult, String> tableColumnPlayer1;
 
     @FXML
+    private TableColumn<MatchResult, String> tableColumnResult;
+
+    @FXML
     private TableColumn<MatchResult, String> tableColumnPlayer2;
 
     @FXML
-    private TableColumn<MatchResult, String> tableColumnResult1;
+    private TableColumn<MatchResult, String> tableColumnSet1;
 
     @FXML
-    private TableColumn<MatchResult, String> tableColumnResult2;
+    private TableColumn<MatchResult, String> tableColumnSet2;
 
     @FXML
-    private TableColumn<MatchResult, String> tableColumnSet1P1;
-
-    @FXML
-    private TableColumn<MatchResult, String> tableColumnSet1P2;
-
-    @FXML
-    private TableColumn<MatchResult, String> tableColumnSet2P1;
-
-    @FXML
-    private TableColumn<MatchResult, String> tableColumnSet2P2;
-
-    @FXML
-    private TableColumn<MatchResult, String> tableColumnSet3P1;
-
-    @FXML
-    private TableColumn<MatchResult, String> tableColumnSet3P2;
+    private TableColumn<MatchResult, String> tableColumnSet3;
 
     @FXML
     void handleButtonRemoveResult(ActionEvent event) {
-
-    }
-
-    @FXML
-    void handleCheckBoxShowSets(ActionEvent event) {
 
     }
 
@@ -78,14 +59,17 @@ public class ContentMatchesController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         tableColumnPlayer1.setCellValueFactory(new PropertyValueFactory<>("player1"));
         tableColumnPlayer2.setCellValueFactory(new PropertyValueFactory<>("player2"));
-        tableColumnResult1.setCellValueFactory(new PropertyValueFactory<>("player1Sets"));
-        tableColumnResult2.setCellValueFactory(new PropertyValueFactory<>("player2Sets"));
-        tableColumnSet1P1.setCellValueFactory(new PropertyValueFactory<>("player1FirstSet"));
-        tableColumnSet1P2.setCellValueFactory(new PropertyValueFactory<>("player2FirstSet"));
-        tableColumnSet2P1.setCellValueFactory(new PropertyValueFactory<>("player1SecondSet"));
-        tableColumnSet2P2.setCellValueFactory(new PropertyValueFactory<>("player2SecondSet"));
-        tableColumnSet3P1.setCellValueFactory(new PropertyValueFactory<>("player1ThirdSet"));
-        tableColumnSet3P2.setCellValueFactory(new PropertyValueFactory<>("player2ThirdSet"));
+        tableColumnResult.setCellValueFactory(new PropertyValueFactory<>("result"));
+        tableColumnSet1.setCellValueFactory(new PropertyValueFactory<>("set1"));
+        tableColumnSet2.setCellValueFactory(new PropertyValueFactory<>("set2"));
+        tableColumnSet3.setCellValueFactory(new PropertyValueFactory<>("set3"));
+
+        tableColumnPlayer1.setStyle("-fx-alignment: CENTER-RIGHT");
+        tableColumnResult.setStyle("-fx-alignment: CENTER");
+        tableColumnPlayer2.setStyle("-fx-alignment: CENTER-LEFT");
+        tableColumnSet1.setStyle("-fx-alignment: CENTER");
+        tableColumnSet2.setStyle("-fx-alignment: CENTER");
+        tableColumnSet3.setStyle("-fx-alignment: CENTER");
     }
 
     public void fillTournamentTable() {
@@ -100,7 +84,7 @@ public class ContentMatchesController implements Initializable {
         tableViewMatches.setItems(null);
         tableViewMatches.setItems(matches);
         tableViewMatches.getColumns().clear();
-        tableViewMatches.getColumns().addAll(tableColumnPlayer1, tableColumnPlayer2, tableColumnResult1, tableColumnResult2, tableColumnSet1P1, tableColumnSet1P2, tableColumnSet2P1, tableColumnSet2P2, tableColumnSet3P1, tableColumnSet3P2);
+        tableViewMatches.getColumns().addAll(tableColumnPlayer1, tableColumnResult, tableColumnPlayer2, tableColumnSet1, tableColumnSet2, tableColumnSet3);
     }
 
     public MainMenuController getParentController() {
