@@ -24,14 +24,14 @@
         <Insets />
       </VBox.margin>
     </ToolBar>
-    <TableView fx:id="tableViewMatches" VBox.vgrow="ALWAYS">
+    <TableView fx:id="tableViewMatches" editable="true" VBox.vgrow="ALWAYS">
       <columns>
         <TableColumn fx:id="tableColumnPlayer1" editable="false" prefWidth="100.0" text="Zawodnik 1" />
-        <TableColumn fx:id="tableColumnResult" prefWidth="70.0" text="Wynik" />
+        <TableColumn fx:id="tableColumnResult" editable="false" prefWidth="70.0" sortable="false" text="Wynik" />
         <TableColumn fx:id="tableColumnPlayer2" editable="false" minWidth="0.0" prefWidth="100.0" text="Zawodnik 2" />
-            <TableColumn fx:id="tableColumnSet1" prefWidth="75.0" text="Set 1" />
-            <TableColumn fx:id="tableColumnSet2" prefWidth="75.0" text="Set 2" />
-            <TableColumn fx:id="tableColumnSet3" prefWidth="75.0" text="Set 3" />
+            <TableColumn fx:id="tableColumnSet1" onEditCommit="#editSet1" prefWidth="75.0" sortable="false" text="Set 1" />
+            <TableColumn fx:id="tableColumnSet2" onEditCommit="#editSet2" prefWidth="75.0" sortable="false" text="Set 2" />
+            <TableColumn fx:id="tableColumnSet3" onEditCommit="#editSet3" prefWidth="75.0" sortable="false" text="Set 3" />
       </columns>
     </TableView>
   </children>

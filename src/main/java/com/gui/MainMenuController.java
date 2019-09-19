@@ -1,6 +1,7 @@
 package com.gui;
 
 import com.app.Match;
+import com.app.MatchResult;
 import com.app.Season;
 import com.app.Tournament;
 import com.utils.SeasonXmlParser;
@@ -218,7 +219,7 @@ public class MainMenuController implements Initializable {
         childController.setParentController(this);
 
         // Fill playerNames' list
-        childController.fillTournamentTable();
+        childController.fillMatches();
     }
 
     @Deprecated
@@ -397,6 +398,7 @@ public class MainMenuController implements Initializable {
         setHyperlinkStates(true);
         disableEnableMenuItems(false);
         currentTournament.setMatches(Match.generateMatches(currentTournament.getPlayers()));
+        currentTournament.setResults(MatchResult.generateEmptyResultsArrayList(currentTournament.getPlayers()));
         setCenterContentTournamentTable();
     }
 

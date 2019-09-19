@@ -1,10 +1,16 @@
 package com.app;
 
+import java.util.ArrayList;
+
 public class MatchResult {
 
     String player1;
     String player2;
     String result;
+
+    String winner;
+    String loser;
+
     String set1;
     String set2;
     String set3;
@@ -15,7 +21,6 @@ public class MatchResult {
     int player1FirstSet = 0;
     int player1SecondSet = 0;
     int player1ThirdSet = 0;
-
     int player2FirstSet = 0;
     int player2SecondSet = 0;
     int player2ThirdSet = 0;
@@ -62,6 +67,22 @@ public class MatchResult {
 
     public void setPlayer2(String player2) {
         this.player2 = player2;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public void setWinner(String winner) {
+        this.winner = winner;
+    }
+
+    public String getLoser() {
+        return loser;
+    }
+
+    public void setLoser(String loser) {
+        this.loser = loser;
     }
 
     public String getResult() {
@@ -158,5 +179,13 @@ public class MatchResult {
 
     public void setPlayer2ThirdSet(int player2ThirdSet) {
         this.player2ThirdSet = player2ThirdSet;
+    }
+
+    public static ArrayList<MatchResult> generateEmptyResultsArrayList(ArrayList<Player> players) {
+        ArrayList<MatchResult> array = new ArrayList<>();
+        for (Player player : players) {
+            array.add(new MatchResult());
+        }
+        return array;
     }
 }

@@ -14,7 +14,7 @@ public class Player {
     // tournament stats
 
     private int tournamentPlace = 1;
-    private int tournamentPoints = 0;
+    private int winLoseBalance = 0;
     private int wins = 0;
     private int loses = 0;
     private int setBalance = 0;
@@ -64,12 +64,12 @@ public class Player {
         this.tournamentPlace = tournamentPlace;
     }
 
-    public int getTournamentPoints() {
-        return tournamentPoints;
+    public int getWinLoseBalance() {
+        return winLoseBalance;
     }
 
-    public void setTournamentPoints(int tournamentPoints) {
-        this.tournamentPoints = tournamentPoints;
+    public void setWinLoseBalance(int winLoseBalance) {
+        this.winLoseBalance = winLoseBalance;
     }
 
     public int getWins() {

@@ -13,6 +13,8 @@ public class Tournament {
 
     private ArrayList<Match> matches;
 
+    private ArrayList<MatchResult> results;
+
     public LocalDate getStartDate() {
         return startDate;
     }
@@ -36,6 +38,14 @@ public class Tournament {
 
     public void setMatches(ArrayList<Match> matches) {
         this.matches = matches;
+    }
+
+    public ArrayList<MatchResult> getResults() {
+        return results;
+    }
+
+    public void setResults(ArrayList<MatchResult> results) {
+        this.results = results;
     }
 
     public static class PointsPerStanding {
