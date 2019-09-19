@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Result table formatting">
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Result filling, handling of 'wins' column in tournament table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/MatchResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/MatchResult.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/app/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/app/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/app/Tournament.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gui/ContentMatches.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gui/ContentMatches.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/gui/ContentTournamentTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/gui/ContentTournamentTable.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/gui/ContentMatches.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentMatches.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentTable.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/gui/ContentTournamentTable.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
+            <state relative-caret-position="136">
+              <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -134,13 +129,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+            <state relative-caret-position="482">
+              <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3113#3114#0" expanded="true" />
+                <element signature="e#3172#3173#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -149,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
+            <state relative-caret-position="665">
+              <caret line="215" column="47" selection-start-line="215" selection-start-column="47" selection-end-line="215" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -179,11 +176,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="400" column="112" lean-forward="true" selection-start-line="400" selection-start-column="112" selection-end-line="400" selection-end-column="112" />
+            <state relative-caret-position="244">
+              <caret line="213" column="27" selection-start-line="213" selection-start-column="27" selection-end-line="213" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -288,12 +285,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/app/Match.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/gui/ContentMatches.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/Tournament.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/app/Player.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/gui/ContentTournamentTable.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/app/MatchResult.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/app/Player.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java" />
       </list>
     </option>
   </component>
@@ -809,7 +806,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568817073349</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Result filling, handling of 'wins' column in tournament table">
+      <created>1568897208494</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1568897208494</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -828,7 +832,7 @@
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21641791" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21641791" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -838,7 +842,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32885906" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.23202302" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.24832214" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.24832214" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32885906" />
@@ -900,7 +904,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
-    <MESSAGE value="Tournament table UI content" />
     <MESSAGE value="Clean-up before Maven migration" />
     <MESSAGE value="Maven migration prepared" />
     <MESSAGE value="Executable created using Launch4j" />
@@ -925,7 +928,8 @@
     <MESSAGE value="Result table filled (to correct)" />
     <MESSAGE value="Result table filled. Sample season xml added for further reference" />
     <MESSAGE value="Result table formatting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Result table formatting" />
+    <MESSAGE value="Result filling, handling of 'wins' column in tournament table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Result filling, handling of 'wins' column in tournament table" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -1293,13 +1297,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/com/gui/ContentTournamentTable.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
@@ -1325,20 +1322,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Match.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="629">
           <caret line="49" column="84" selection-start-line="49" selection-start-column="84" selection-end-line="49" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="665">
+          <caret line="215" column="47" selection-start-line="215" selection-start-column="47" selection-end-line="215" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="213" column="27" selection-start-line="213" selection-start-column="27" selection-end-line="213" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/app/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="19" lean-forward="true" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1365,17 +1373,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentMatchesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/ContentTournamentTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="193" column="16" selection-start-line="193" selection-start-column="16" selection-end-line="193" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gui/MainMenuController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="400" column="112" lean-forward="true" selection-start-line="400" selection-start-column="112" selection-end-line="400" selection-end-column="112" />
+        <state relative-caret-position="482">
+          <caret line="61" column="72" selection-start-line="61" selection-start-column="72" selection-end-line="61" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3113#3114#0" expanded="true" />
+            <element signature="e#3172#3173#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

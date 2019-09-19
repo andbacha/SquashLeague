@@ -207,8 +207,14 @@ public class ContentMatchesController implements Initializable {
     }
 
     private void findWinner(MatchResult result) {
-        if (result.getPlayer1Sets() > result.getPlayer2Sets()) { result.setWinner(result.getPlayer1()); }
-        else if (result.getPlayer1Sets() < result.getPlayer2Sets()) { result.setWinner(result.getPlayer2()); }
+        if (result.getPlayer1Sets() > result.getPlayer2Sets()) {
+            result.setWinner(result.getPlayer1());
+            result.setLoser(result.getPlayer2());
+        }
+        else if (result.getPlayer1Sets() < result.getPlayer2Sets()) {
+            result.setWinner(result.getPlayer2());
+            result.setLoser(result.getPlayer1());
+        }
     }
 
 }

@@ -1,5 +1,7 @@
 package com.app;
 
+import java.util.Comparator;
+
 public class Player {
 
     // PRIVATE FIELDS
@@ -23,6 +25,10 @@ public class Player {
     private int smallPointBalance = 0;
     private int wonSmallPoints = 0;
     private int lostSmallPoints = 0;
+
+    public static Comparator<Player> comparator = Comparator
+            .comparing(Player::getWinLoseBalance)
+            .thenComparing(Player::getWins);
 
     // CONSTRUCTORS
 

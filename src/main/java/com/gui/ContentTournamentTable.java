@@ -59,6 +59,7 @@ public class ContentTournamentTable implements Initializable {
         tableViewTournament.setItems(players);
         tableViewTournament.getColumns().clear();
         tableViewTournament.getColumns().addAll(tableColumnStanding, tableColumnPlayer, tableColumnWinLoseBalance, tableColumnWins, tableColumnLoses);
+        tableViewTournament.getItems().sort(Player.comparator.reversed());
     }
 
     public void setParentController(MainMenuController parentController) {
@@ -67,18 +68,24 @@ public class ContentTournamentTable implements Initializable {
 
     public void calculateTable() {
         ArrayList<MatchResult> results = parentController.getCurrentTournament().getResults();
-        calculateWins(results);
-//        calculateWins(results);
-//        calculateLoses(results);
+        calculateTableContent(results);
     }
 
-    private void calculateWins(ArrayList<MatchResult> results) {
+    private void calculateTableContent(ArrayList<MatchResult> results) {
         for (Player player : parentController.getCurrentTournament().getPlayers()) {
             int wins = 0;
+            int loses = 0;
             for (MatchResult result : results) {
                 if (player.getPlayerName().equals(result.getWinner())) { wins++; }
+                else if (player.getPlayerName().equals(result.getLoser())) { loses++; }
             }
             player.setWins(wins);
+            player.setLoses(loses);
+            player.setWinLoseBalance(calculateWinLoseBalance(player));
         }
+    }
+
+    private int calculateWinLoseBalance(Player player) {
+        return player.getWins() - player.getLoses();
     }
 }
