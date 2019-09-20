@@ -16,15 +16,16 @@ public class Player {
     // tournament stats
 
     private int tournamentPlace = 1;
+    private int played = 0;
     private int winLoseBalance = 0;
     private int wins = 0;
     private int loses = 0;
     private int setBalance = 0;
     private int wonSets = 0;
     private int lostSets = 0;
-    private int smallPointBalance = 0;
-    private int wonSmallPoints = 0;
-    private int lostSmallPoints = 0;
+    private int pointBalance = 0;
+    private int wonPoints = 0;
+    private int lostPoints = 0;
 
     public static Comparator<Player> comparator = Comparator
             .comparing(Player::getWinLoseBalance)
@@ -68,6 +69,14 @@ public class Player {
 
     public void setTournamentPlace(int tournamentPlace) {
         this.tournamentPlace = tournamentPlace;
+    }
+
+    public int getPlayed() {
+        return played;
+    }
+
+    public void setPlayed(int played) {
+        this.played = played;
     }
 
     public int getWinLoseBalance() {
@@ -118,27 +127,27 @@ public class Player {
         this.lostSets = lostSets;
     }
 
-    public int getSmallPointBalance() {
-        return smallPointBalance;
+    public int getPointBalance() {
+        return pointBalance;
     }
 
-    public void setSmallPointBalance(int smallPointBalance) {
-        this.smallPointBalance = smallPointBalance;
+    public void setPointBalance(int pointBalance) {
+        this.pointBalance = pointBalance;
     }
 
-    public int getWonSmallPoints() {
-        return wonSmallPoints;
+    public int getWonPoints() {
+        return wonPoints;
     }
 
-    public void setWonSmallPoints(int wonSmallPoints) {
-        this.wonSmallPoints = wonSmallPoints;
+    public void setWonPoints(int wonPoints) {
+        this.wonPoints = wonPoints;
     }
 
-    public int getLostSmallPoints() {
-        return lostSmallPoints;
+    public int getLostPoints() {
+        return lostPoints;
     }
 
-    public void setLostSmallPoints(int lostSmallPoints) {
-        this.lostSmallPoints = lostSmallPoints;
+    public void setLostPoints(int lostPoints) {
+        this.lostPoints = lostPoints;
     }
 }
