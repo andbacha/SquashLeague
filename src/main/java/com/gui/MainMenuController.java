@@ -55,12 +55,6 @@ public class MainMenuController implements Initializable {
     private MenuItem menuSaveSeason;
 
     @FXML
-    private MenuItem menuExportPlayers;
-
-    @FXML
-    private MenuItem menuImportPlayers;
-
-    @FXML
     private MenuItem menuClose;
 
     @FXML
@@ -92,12 +86,6 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private Button buttonRemoveTournament;
-
-    @FXML
-    private Button buttonImportPlayers;
-
-    @FXML
-    private Button buttonExportPlayers;
 
     @FXML
     private Label labelBottom;
@@ -277,8 +265,6 @@ public class MainMenuController implements Initializable {
     public void disableEnableMenuItems(boolean state) {
         // menu "Plik"
         menuSaveSeason.setDisable(state);
-        menuExportPlayers.setDisable(state);
-        menuImportPlayers.setDisable(state);
 
         // menu "Dodaj"
         menuAddTournament.setDisable(state);
@@ -293,8 +279,6 @@ public class MainMenuController implements Initializable {
         // toolbar buttons
         buttonNewTournament.setDisable(state);
         buttonRemoveTournament.setDisable(state);
-        buttonImportPlayers.setDisable(state);
-        buttonExportPlayers.setDisable(state);
     }
 
     /**
@@ -304,8 +288,6 @@ public class MainMenuController implements Initializable {
     public void setMenuItemStatesDependingOnSeason(boolean state) {
         // menu "Plik"
         menuSaveSeason.setDisable(state);
-        menuExportPlayers.setDisable(state);
-        menuImportPlayers.setDisable(state);
 
         // menu "Dodaj"
         menuAddTournament.setDisable(state);
@@ -320,8 +302,6 @@ public class MainMenuController implements Initializable {
         // toolbar buttons
         buttonNewTournament.setDisable(state);
         buttonRemoveTournament.setDisable(state);
-        buttonImportPlayers.setDisable(state);
-        buttonExportPlayers.setDisable(state);
     }
 
     /**
@@ -402,7 +382,7 @@ public class MainMenuController implements Initializable {
         setCenterContentTournamentTable();
     }
 
-    public void handleMenuLoadSeason(ActionEvent actionEvent) {
+    public void loadSeason(ActionEvent actionEvent) {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik sezonu");
         File seasonFile = fileChooser.showOpenDialog(null);

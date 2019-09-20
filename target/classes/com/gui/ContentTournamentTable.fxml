@@ -4,10 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox spacing="5.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentTournamentTable">
+<VBox spacing="5.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.ContentTournamentTable">
    <children>
       <Label text="Tabela turnieju">
          <font>
@@ -18,11 +19,28 @@
         <columns>
           <TableColumn fx:id="tableColumnStanding" prefWidth="50.0" text="Miejsce" />
           <TableColumn fx:id="tableColumnPlayer" prefWidth="150.0" text="Zawodnik" />
-            <TableColumn fx:id="tableColumnWinLoseBalance" prefWidth="120.0" text="Bilans wygranych" />
-            <TableColumn fx:id="tableColumnWins" text="Wygrane" />
-            <TableColumn fx:id="tableColumnLoses" text="Przegrane" />
+            <TableColumn fx:id="tableColumnMatches" prefWidth="30.0" text="PLD" />
+            <TableColumn fx:id="tableColumnWinLoseBalance" prefWidth="30.0" text="MB" />
+            <TableColumn fx:id="tableColumnWins" prefWidth="30.0" text="W" />
+            <TableColumn fx:id="tableColumnLoses" prefWidth="30.0" text="L" />
+            <TableColumn fx:id="tableColumnSetBalance" prefWidth="30.0" text="SB" />
+            <TableColumn fx:id="tableColumnWonSets" prefWidth="30.0" text="WS" />
+            <TableColumn fx:id="tableColumnLostSets" prefWidth="30.0" text="LS" />
+            <TableColumn fx:id="tableColumnPointBalance" prefWidth="30.0" text="PB" />
+            <TableColumn fx:id="tableColumnWonPoints" prefWidth="30.0" text="WP" />
+            <TableColumn fx:id="tableColumnLostPoints" prefWidth="30.0" text="LP" />
         </columns>
       </TableView>
+      <Label fx:id="labelLegendTitle" text="Legenda">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+      <HBox spacing="20.0">
+         <children>
+            <Label fx:id="labelLegendText" text="Legenda" />
+            <Label fx:id="labelRules" layoutX="10.0" layoutY="10.0" text="Zasady" />
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

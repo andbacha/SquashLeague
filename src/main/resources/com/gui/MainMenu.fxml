@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.MainMenuController">
    <top>
@@ -21,10 +22,8 @@
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
                               <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
-                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" onAction="#handleMenuLoadSeason" text="Wczytaj sezon" />
+                              <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" onAction="#loadSeason" text="Wczytaj sezon" />
                               <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
-                              <MenuItem fx:id="menuExportPlayers" mnemonicParsing="false" text="Eksportuj zawodników" />
-                              <MenuItem fx:id="menuImportPlayers" mnemonicParsing="false" text="Importuj zawodników" />
                               <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Zamknij" />
                           </items>
                       </Menu>
@@ -52,10 +51,9 @@
             <ToolBar>
               <items>
                 <Button fx:id="buttonNewSeason" mnemonicParsing="false" onAction="#handleActionNewSeason" text="Nowy sezon" />
+                  <Button fx:id="buttonLoadSeason" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#loadSeason" text="Wczytaj sezon" />
                   <Button fx:id="buttonNewTournament" layoutX="10.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleActionNewTournament" text="Nowy turniej" />
                   <Button fx:id="buttonRemoveTournament" layoutX="183.0" layoutY="13.0" mnemonicParsing="false" text="Usuń turniej" />
-                  <Button fx:id="buttonImportPlayers" layoutX="372.0" layoutY="13.0" mnemonicParsing="false" text="Import zawodników" />
-                  <Button fx:id="buttonExportPlayers" layoutX="479.0" layoutY="13.0" mnemonicParsing="false" text="Eksport zawodników" />
               </items>
             </ToolBar>
          </children>
@@ -71,13 +69,26 @@
    <left>
       <VBox BorderPane.alignment="CENTER">
          <children>
+            <Label text="Turniej">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContentTournamentTable" text="Klasyfikacja turnieju" />
             <Hyperlink fx:id="hyperlinkMatches" onAction="#setCenterContentMatches" text="Mecze" />
-            <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContentTournamentTable" text="Tabela turnieju" />
-            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContentPlayers" text="Zawodnicy" />
-            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContentSeasonTable" text="Klasyfikacja sezonu" />
             <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zasady turnieju" />
-            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#hyperlinkClick" text="Zasady sezonu" />
             <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#displayWarningDialog" text="Zakończ turniej" />
+            <Label layoutX="10.0" layoutY="10.0" text="Sezon">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </Label>
+            <Hyperlink fx:id="hyperlinkSeasonTable" layoutX="10.0" layoutY="56.0" onAction="#setCenterContentSeasonTable" text="Klasyfikacja sezonu" />
+            <Hyperlink fx:id="hyperlinkPlayers" layoutX="10.0" layoutY="33.0" onAction="#setCenterContentPlayers" text="Zawodnicy" />
+            <Hyperlink fx:id="hyperlinkSeasonRules" layoutX="10.0" layoutY="102.0" onAction="#hyperlinkClick" text="Zasady sezonu" />
             <Hyperlink fx:id="hyperlinkEndSeason" layoutX="10.0" layoutY="148.0" onAction="#displayWarningDialog" text="Zakończ sezon" />
          </children>
          <BorderPane.margin>
