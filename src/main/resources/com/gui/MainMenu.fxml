@@ -21,29 +21,27 @@
                   <menus>
                       <Menu mnemonicParsing="false" text="Plik">
                           <items>
-                              <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" text="Nowy sezon" />
+                              <MenuItem fx:id="menuNewSeason" mnemonicParsing="false" onAction="#handleActionNewSeason" text="Nowy sezon" />
                               <MenuItem fx:id="menuLoadSeason" mnemonicParsing="false" onAction="#loadSeason" text="Wczytaj sezon" />
                               <MenuItem fx:id="menuSaveSeason" mnemonicParsing="false" text="Zapisz sezon" />
-                              <MenuItem fx:id="menuClose" mnemonicParsing="false" text="Zamknij" />
+                              <MenuItem fx:id="menuClose" mnemonicParsing="false" onAction="#closeApplication" text="Zamknij" />
                           </items>
                       </Menu>
                   <Menu mnemonicParsing="false" text="Dodaj">
                      <items>
-                        <MenuItem fx:id="menuAddTournament" mnemonicParsing="false" text="Dodaj turniej..." />
-                        <MenuItem fx:id="menuAddPlayer" mnemonicParsing="false" text="Dodaj zawodnika..." />
+                        <MenuItem fx:id="menuAddTournament" mnemonicParsing="false" onAction="#handleActionNewTournament" text="Dodaj turniej..." />
+                        <MenuItem fx:id="menuAddPlayer" mnemonicParsing="false" onAction="#addPlayer" text="Dodaj zawodnika..." />
                      </items>
                   </Menu>
                       <Menu mnemonicParsing="false" text="Edytuj">
                      <items>
-                        <MenuItem fx:id="menuModifyTournament" mnemonicParsing="false" text="Edytuj turniej..." />
-                        <MenuItem fx:id="menuModifyPlayer" mnemonicParsing="false" text="Edytuj zawodnika..." />
-                        <MenuItem fx:id="menuRemoveTournament" mnemonicParsing="false" text="Usuń turniej..." />
-                        <MenuItem fx:id="menuRemovePlayer" mnemonicParsing="false" text="Usuń zawodnika..." />
+                        <MenuItem fx:id="menuModifyTournament" mnemonicParsing="false" text="Edytuj turnieje..." />
+                        <MenuItem fx:id="menuModifyPlayer" mnemonicParsing="false" text="Edytuj zawodników..." />
                      </items>
                       </Menu>
                       <Menu mnemonicParsing="false" text="Pomoc">
                           <items>
-                              <MenuItem fx:id="menuAbout" mnemonicParsing="false" text="O programie" />
+                              <MenuItem fx:id="menuAbout" mnemonicParsing="false" onAction="#about" text="O programie" />
                           </items>
                       </Menu>
                   </menus>
@@ -77,7 +75,7 @@
             <Hyperlink fx:id="hyperlinkTournamentTable" layoutX="10.0" layoutY="10.0" onAction="#setCenterContentTournamentTable" text="Klasyfikacja turnieju" />
             <Hyperlink fx:id="hyperlinkMatches" onAction="#setCenterContentMatches" text="Mecze" />
             <Hyperlink fx:id="hyperlinkTournamentRules" layoutX="10.0" layoutY="33.0" onAction="#hyperlinkClick" text="Zasady turnieju" />
-            <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#displayWarningDialog" text="Zakończ turniej" />
+            <Hyperlink fx:id="hyperlinkEndTournament" layoutX="10.0" layoutY="56.0" onAction="#endTournament" text="Zakończ turniej" />
             <Label layoutX="10.0" layoutY="10.0" text="Sezon">
                <font>
                   <Font size="20.0" />

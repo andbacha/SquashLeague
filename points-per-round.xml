@@ -1,0 +1,129 @@
+<pointsPerRound>
+
+    <perPlayersCount>
+        <playerCount>4</playerCount>
+        <pointsPerPlace>
+            <points>30</points>
+            <points>15</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>5</playerCount>
+        <pointsPerPlace>
+            <points>40</points>
+            <points>25</points>
+            <points>13</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>6</playerCount>
+        <pointsPerPlace>
+            <points>50</points>
+            <points>35</points>
+            <points>20</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>7</playerCount>
+        <pointsPerPlace>
+            <points>60</points>
+            <points>45</points>
+            <points>30</points>
+            <points>18</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>8</playerCount>
+        <pointsPerPlace>
+            <points>70</points>
+            <points>55</points>
+            <points>40</points>
+            <points>25</points>
+            <points>15</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>9</playerCount>
+        <pointsPerPlace>
+            <points>80</points>
+            <points>65</points>
+            <points>50</points>
+            <points>35</points>
+            <points>22</points>
+            <points>22</points>
+            <points>12</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>10</playerCount>
+        <pointsPerPlace>
+            <points>90</points>
+            <points>75</points>
+            <points>60</points>
+            <points>46</points>
+            <points>28</points>
+            <points>28</points>
+            <points>15</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>11</playerCount>
+        <pointsPerPlace>
+            <points>100</points>
+            <points>85</points>
+            <points>70</points>
+            <points>55</points>
+            <points>42</points>
+            <points>25</points>
+            <points>25</points>
+            <points>15</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+    <perPlayersCount>
+        <playerCount>12</playerCount>
+        <pointsPerPlace>
+            <points>110</points>
+            <points>90</points>
+            <points>75</points>
+            <points>60</points>
+            <points>45</points>
+            <points>35</points>
+            <points>35</points>
+            <points>23</points>
+            <points>15</points>
+            <points>10</points>
+            <points>5</points>
+            <points>1</points>
+        </pointsPerPlace>
+    </perPlayersCount>
+
+</pointsPerRound>

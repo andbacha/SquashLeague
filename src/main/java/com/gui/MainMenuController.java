@@ -5,10 +5,13 @@ import com.app.MatchResult;
 import com.app.Season;
 import com.app.Tournament;
 import com.utils.SeasonXmlParser;
+import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
@@ -24,6 +27,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.ResourceBundle;
 
@@ -68,12 +72,6 @@ public class MainMenuController implements Initializable {
 
     @FXML
     private MenuItem menuModifyPlayer;
-
-    @FXML
-    private MenuItem menuRemoveTournament;
-
-    @FXML
-    private MenuItem menuRemovePlayer;
 
     @FXML
     private MenuItem menuAbout;
@@ -173,13 +171,14 @@ public class MainMenuController implements Initializable {
         return loader;
     }
 
-    public void setCenterContentPlayers() throws IOException {
+    public ContentPlayersController setCenterContentPlayers() throws IOException {
         ContentPlayersController childController = setCenterContent("ContentPlayers.fxml").getController();
         childController.setParentController(this);
 
         // Fill playerNames' list
         childController.setPlayers(currentSeason.getPlayers().keySet());
         childController.fillPlayers(childController.getPlayers());
+        return childController;
     }
 
     public void setCenterContentSeasonTable() throws IOException {
@@ -273,8 +272,6 @@ public class MainMenuController implements Initializable {
         // menu "Edytuj"
         menuModifyTournament.setDisable(state);
         menuModifyPlayer.setDisable(state);
-        menuRemoveTournament.setDisable(state);
-        menuRemovePlayer.setDisable(state);
 
         // toolbar buttons
         buttonNewTournament.setDisable(state);
@@ -296,8 +293,6 @@ public class MainMenuController implements Initializable {
         // menu "Edytuj"
         menuModifyPlayer.setDisable(state);
         menuModifyTournament.setDisable(state);
-        menuRemovePlayer.setDisable(state);
-        menuRemoveTournament.setDisable(state);
 
         // toolbar buttons
         buttonNewTournament.setDisable(state);
@@ -382,19 +377,40 @@ public class MainMenuController implements Initializable {
         setCenterContentTournamentTable();
     }
 
-    public void loadSeason(ActionEvent actionEvent) {
+    public void loadSeason(ActionEvent actionEvent) throws IOException {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik sezonu");
         File seasonFile = fileChooser.showOpenDialog(null);
-        if (seasonFile.exists()) {
+        if (seasonFile != null && seasonFile.exists()) {
             currentSeason = SeasonXmlParser.seasonParser(seasonFile);
             setHyperlinkStatesWhenSeasonOpened(true);
             enableMenuItemsWhenSeasonOpened();
-            try {
-                setCenterContentPlayers();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            setCenterContentPlayers();
         }
+    }
+
+    public void closeApplication(ActionEvent actionEvent) {
+        // close window
+        Platform.exit();
+    }
+
+    public void addPlayer(ActionEvent actionEvent) throws IOException {
+        setCenterContentPlayers().addPlayer(actionEvent);
+    }
+
+    public void about(ActionEvent actionEvent) throws Exception {
+        openModalDialog("O programie", "InfoDialog.fxml");
+        modalDialog.show();
+    }
+
+    public void endTournament(ActionEvent actionEvent) throws Exception{
+//        displayWarningDialog(actionEvent);
+        currentSeason.getTournaments().add(currentTournament);
+        setCenterContentSeasonTable();
+        disableEnableMenuItems(true);
+        enableMenuItemsWhenSeasonOpened();
+        setHyperlinkStates(false);
+        setHyperlinkStatesWhenSeasonOpened(true);
+        currentTournament = new Tournament();
     }
 }

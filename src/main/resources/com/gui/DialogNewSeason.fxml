@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <ScrollPane xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gui.DialogNewSeasonController">
    <content>
       <VBox fx:id="dialogNewSeason" spacing="10.0">
@@ -52,8 +51,8 @@
                <content>
                   <HBox spacing="10.0">
                      <children>
-                        <Label prefHeight="25.0" text="Docelowa liczba punktów" HBox.hgrow="ALWAYS" />
-                        <TextField fx:id="textFieldTargetPoints" HBox.hgrow="ALWAYS" />
+                        <Label prefHeight="25.0" text="Docelowa liczba kolejek" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="textFieldRounds" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </content>

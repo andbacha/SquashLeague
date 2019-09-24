@@ -6,14 +6,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -75,22 +80,48 @@ public class DialogNewTournament implements Initializable {
         listViewSeasonPlayers.getItems();
     }
 
+    public void displayMessage(String message) throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("InfoDialog.fxml"));
+        Parent root = loader.load();
+
+        Scene infoDialogScene = new Scene(root);
+
+        // Provide DialogNewSeasonController object to child controller
+        InfoDialogController childController = loader.getController();
+        childController.setMessageText(message);
+
+        // Set and display stage
+        Stage modalDialog = new Stage();
+        modalDialog.setScene(infoDialogScene);
+        modalDialog.initModality(Modality.APPLICATION_MODAL);
+        modalDialog.setTitle("Uwaga!");
+        modalDialog.setResizable(false);
+        modalDialog.show();
+    }
+
     @FXML
-    void handleButtonCreateTournament(ActionEvent event) {
-        HashMap<String, Player> playersHashMap = parentController.getCurrentSeason().getPlayers();
-        for (String playerName : playerNames) {
-            players.add(playersHashMap.get(playerName));
+    void handleButtonCreateTournament(ActionEvent event) throws Exception {
+        if (playerNames.size() < 4) {
+            displayMessage("Za mało zawodników! Wprowadź co najmniej czterech.");
+        } else if (playerNames.size() > 11) {
+            displayMessage("Za dużo zawodników! Maksymalna liczba: 11.");
+        } else {
+            HashMap<String, Player> playersHashMap = parentController.getCurrentSeason().getPlayers();
+            for (String playerName : playerNames) {
+                players.add(playersHashMap.get(playerName));
+            }
+            tournament.setPlayers(players);
+            tournament.setStartDate();
+            parentController.setCurrentTournament(tournament);
+
+            // TODO confirm dialog
+
+            // close window
+            Node source = (Node) event.getSource();
+            Stage stage = (Stage) source.getScene().getWindow();
+            stage.close();
         }
-        tournament.setPlayers(players);
-        tournament.setStartDate();
-        parentController.setCurrentTournament(tournament);
-
-        // TODO confirm dialog
-
-        // close window
-        Node source = (Node) event.getSource();
-        Stage stage = (Stage) source.getScene().getWindow();
-        stage.close();
     }
 
     @Override

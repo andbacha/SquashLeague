@@ -32,11 +32,13 @@ public class Season {
     // CONSTRUCTORS
 
     public Season() {
+        this.tournaments = new ArrayList<>();
         this.startDate = LocalDate.now();
         this.players = new HashMap<>();
     }
 
     public Season(LocalDate startDate, HashMap<String, Player> players) {
+        this.tournaments = new ArrayList<>();
         this.startDate = startDate;
         this.players = players;
     }

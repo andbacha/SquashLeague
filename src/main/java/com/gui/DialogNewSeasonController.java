@@ -68,7 +68,7 @@ public class DialogNewSeasonController implements Initializable {
     private ListView<String> listViewPlayers;
 
     @FXML
-    private TextField textFieldTargetPoints;
+    private TextField textFieldRounds;
 
     @FXML
     private Button buttonCreateTournament;
@@ -115,6 +115,26 @@ public class DialogNewSeasonController implements Initializable {
         return answer;
     }
 
+    public void displayMessage(String message) throws Exception {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("InfoDialog.fxml"));
+        Parent root = loader.load();
+
+        Scene infoDialogScene = new Scene(root);
+
+        // Provide DialogNewSeasonController object to child controller
+        InfoDialogController childController = loader.getController();
+        childController.setMessageText(message);
+
+        // Set and display stage
+        Stage modalDialog = new Stage();
+        modalDialog.setScene(infoDialogScene);
+        modalDialog.initModality(Modality.APPLICATION_MODAL);
+        modalDialog.setTitle("Uwaga!");
+        modalDialog.setResizable(false);
+        modalDialog.show();
+    }
+
     @FXML
     void handleButtonAddPlayer(ActionEvent event) {
         String playerName = textFieldPlayerName.getText();
@@ -132,9 +152,11 @@ public class DialogNewSeasonController implements Initializable {
     void handleButtonCreateSeason(ActionEvent event) throws Exception {
         ObservableList<String> players = listViewPlayers.getItems();
         try {
-            int targetPoints = Integer.parseInt(textFieldTargetPoints.getText());
-            if (textFieldTargetPoints.getText().equals("")) {
-                textFieldTargetPoints.setPromptText("Wpisz docelową liczbę punktów!");
+            int targetPoints = Integer.parseInt(textFieldRounds.getText());
+            if (textFieldRounds.getText().equals("")) {
+                textFieldRounds.setPromptText("Wpisz docelową liczbę kolejek!");
+            } else if (listViewPlayers.getItems().size() < 4) {
+                displayMessage("Za mało zawodników! Wprowadź co najmniej czterech.");
             } else {
                 // display confirmation dialog, if answer is yes - proceed
                 if (displayConfirmationDialog()) {
@@ -162,8 +184,8 @@ public class DialogNewSeasonController implements Initializable {
 
             }
         } catch (NumberFormatException e) {
-            textFieldTargetPoints.clear();
-            textFieldTargetPoints.setPromptText("Wpisz poprawną liczbę punktów!");
+            textFieldRounds.clear();
+            textFieldRounds.setPromptText("Wpisz poprawną liczbę kolejek!");
         }
     }
 
